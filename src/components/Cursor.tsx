@@ -72,7 +72,7 @@ const Cursor = () => {
       transformTemplate={({ rotate, scaleX, scaleY }) =>
         `rotate(${rotate}) scaleX(${scaleX}) scaleY(${scaleY})`
       }
-      className="w-3 h-3 fixed rounded-full z-10 bg-gray-text pointer-events-none"
+      className="w-3 h-3 fixed rounded-full z-10 bg-black pointer-events-none"
       style={{
         left: smoothMouse.x,
         top: smoothMouse.y,

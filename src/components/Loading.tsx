@@ -27,7 +27,7 @@ const Loading = ({ children }: any) => {
       {!loaded && (
         <motion.div
           exit={{ height: 0 }}
-          className="fixed top-0 h-screen w-screen bg-black z-20"
+          className="fixed top-0  w-screen bg-black z-20 h-1/2"
         ></motion.div>
       )}
     </AnimatePresence>

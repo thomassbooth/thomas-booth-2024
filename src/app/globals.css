@@ -5,7 +5,7 @@
 body{
   margin: 0px;
   padding-bottom: 100vh;
-  cursor: none;
+ /* cursor: none;  */
 }
 
 html {

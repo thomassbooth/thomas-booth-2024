@@ -1,7 +1,7 @@
 "use client";
 
 import Cursor from "@/components/Cursor";
-import Menu from "@/components/Menu";
+import Menu from "@/components/Header/Menu";
 import React, { useRef } from "react";
 
 const CursorMenu = ({ children }: { children: React.ReactNode }) => {

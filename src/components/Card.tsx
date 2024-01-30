@@ -1,6 +1,6 @@
 "use client";
 
-import useHover from "@/store/useHover";
+import useCursor from "@/store/useCursor";
 import React from "react";
 
 interface cardProps {
@@ -8,7 +8,7 @@ interface cardProps {
 }
 
 const Card: React.FC<cardProps> = ({ colour }) => {
-  const [hover, setHover] = useHover((state) => [state.hover, state.setHover]);
+  const [cursor, setCursor] = useCursor((state) => [state.cursor, state.cursor]);
   return (
     <div
       className="h-screen flex items-center justify-center sticky top-0"

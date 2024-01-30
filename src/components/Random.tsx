@@ -1,22 +1,22 @@
 "use client";
-import useHover from "@/store/useHover";
+import useHover from "@/store/useCursor";
 import React from "react";
 
 const Random = () => {
-  const [hover, setHover] = useHover((state) => [state.hover, state.setHover]);
+  const [cursor, setCursor] = useHover((state) => [state.cursor, state.setCursor]);
   return (
     <div
       className="bg-red-300 w-[1000px] h-[200px] text-white z-20"
       onMouseLeave={() => {
         console.log("leaving");
-        setHover(false);
+        setCursor({size: 16, type: 'none'});
       }}
       onMouseEnter={() => {
         console.log('entering')
-        setHover({type: 'other'});
+        setCursor({size: 100, type: 'random'});
       }}
     >
-      {hover ? "true" : "false"}
+      {cursor.type === 'random' ? "true" : "false"}
     </div>
   );
 };

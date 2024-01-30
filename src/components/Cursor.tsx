@@ -1,6 +1,6 @@
 "use client";
 
-import useHover from "@/store/useHover";
+import useHover from "@/store/useCursor";
 import {
   animate,
   motion,
@@ -11,11 +11,10 @@ import {
 import React, { useEffect, useRef } from "react";
 
 const Cursor = ({ stickyElement }: { stickyElement: React.MutableRefObject<any>}) => {
-  const [hover, setHover] = useHover((state) => [state.hover, state.setHover]);
+  const [cursor, setCursor] = useHover((state) => [state.cursor, state.setCursor]);
 
   const cursorRef = useRef<any>();
-  const cursorSize = hover ? 60 : 24;
-  const hoveredCursorSize = 60;
+  const cursorSize = cursor.size
 
   const rotate = (distance: {x: number, y: number}) => {
     const newAngle = Math.atan2(distance.y, distance.x);
@@ -49,7 +48,7 @@ const Cursor = ({ stickyElement }: { stickyElement: React.MutableRefObject<any>}
       y: clientY - centerCursorDrag.y,
     };
     
-    if (hover.type === "menu") {
+    if (cursor.type === "menu") {
       const { left, top, height, width } =
         stickyElement.current.getBoundingClientRect();
 
@@ -74,12 +73,12 @@ const Cursor = ({ stickyElement }: { stickyElement: React.MutableRefObject<any>}
       mouse.y.set(center.y - cursorSize / 2 + distance.y * 0.1);
       return;
     }
-    if (hover.type === 'other') {
-      mouse.x.set(clientX - hoveredCursorSize / 2);
-      mouse.y.set(clientY - hoveredCursorSize / 2);
+    if (cursor.type === 'random') {
+      mouse.x.set(clientX - cursorSize / 2);
+      mouse.y.set(clientY - cursorSize / 2);
     }
 
-    if (!hover) {
+    if (cursor.type === 'none') {
       const absDistance = Math.max(Math.abs(distance.x), Math.abs(distance.y));
       const newScaleX = transform(absDistance, [0, (width * 3) / 2], [1, 1.3]);
       const newScaleY = transform(absDistance, [0, (width * 3) / 2], [1, 0.7]);
@@ -92,11 +91,11 @@ const Cursor = ({ stickyElement }: { stickyElement: React.MutableRefObject<any>}
   };
 
   const manageMouseOver = () => {
-    setHover({ type: "menu" });
+    setCursor({size: 60, type: "menu" });
   };
 
   const manageMouseLeave = () => {
-    setHover(false);
+    setCursor({type: 'none', size: 16});
     animate(
       cursorRef.current,
       { scaleX: 1, scaleY: 1 },
@@ -106,13 +105,13 @@ const Cursor = ({ stickyElement }: { stickyElement: React.MutableRefObject<any>}
   
   useEffect(() => {
     window.addEventListener("mousemove", manageMouseMove);
-    if (!hover)
+    if (cursor.type === 'none')
       animate(
         cursorRef.current,
         { scaleX: 1, scaleY: 1 },
         { duration: 0, type: "spring" }
       );
-    if (hover.type === "other") {
+    if (cursor.type === "random") {
       animate(
         cursorRef.current,
         { scaleX: 1, scaleY: 1, rotate: 0  },
@@ -122,7 +121,7 @@ const Cursor = ({ stickyElement }: { stickyElement: React.MutableRefObject<any>}
     return () => {
       window.removeEventListener("mousemove", manageMouseMove);
     };
-  }, [hover]);
+  }, [cursor]);
 
   useEffect(() => {
     stickyElement.current.addEventListener("mouseenter", manageMouseOver);
@@ -132,7 +131,7 @@ const Cursor = ({ stickyElement }: { stickyElement: React.MutableRefObject<any>}
       stickyElement.current.removeEventListener("mouseenter", manageMouseOver);
       stickyElement.current.removeEventListener("mouseleave", manageMouseLeave);
     };
-  }, [hover])
+  }, [cursor])
 
   return (
     <motion.div
@@ -140,7 +139,7 @@ const Cursor = ({ stickyElement }: { stickyElement: React.MutableRefObject<any>}
       transformTemplate={({ rotate, scaleX, scaleY }) =>
         `rotate(${rotate}) scaleX(${scaleX}) scaleY(${scaleY})`
       }
-      className="flex justify-center items-center w-6 h-6 fixed rounded-full z-10 bg-black pointer-events-none"
+      className="flex justify-center items-center w-4 h-4 fixed rounded-full z-10 bg-black pointer-events-none"
       animate={{
         width: cursorSize,
         height: cursorSize,

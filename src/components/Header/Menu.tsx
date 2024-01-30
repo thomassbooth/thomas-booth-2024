@@ -2,14 +2,14 @@
 
 import { forwardRef, useState } from "react";
 import { motion } from "framer-motion";
-import Magnetic from "./Magnetic";
+import Magnetic from "../Magnetic";
 
 const Menu = forwardRef<HTMLDivElement>(function Menu(props, ref) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <div className="fixed flex w-full justify-end p-[10px] z-20">
+      <div className="pointer-events-none mix-blend-difference fixed flex w-full justify-end p-[10px] z-20">
         <Magnetic>
           <button
             onClick={() => {
@@ -27,8 +27,8 @@ const Menu = forwardRef<HTMLDivElement>(function Menu(props, ref) {
 
       <motion.div
         animate={isOpen ? "open" : "closed"}
-        variants={{ open: { height: "100vh" }, closed: { height: "0vh" } }}
-        className="z-10 fixed top-0 left-0 h-screen w-screen bg-blue-400"
+        variants={{ open: { left: '50vw' }, closed: {  left: '100vw'} }}
+        className="z-10 fixed top-0 left-0 h-screen w-screen bg-white"
       ></motion.div>
     </>
   );

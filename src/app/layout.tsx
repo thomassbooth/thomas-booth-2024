@@ -4,7 +4,7 @@ import { GeistSans } from "geist/font/sans";
 import localFont from "next/font/local";
 import "./globals.css";
 import Loading from "@/components/Loading";
-import Cursor from "@/components/Cursor";
+import Cursor from "@/components/Cursor/Cursor";
 import CursorMenu from "@/layouts/CursorMenu";
 
 const OverusedGrotesk = localFont({

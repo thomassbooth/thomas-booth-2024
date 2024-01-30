@@ -1,6 +1,6 @@
 "use client";
 
-import Cursor from "@/components/Cursor";
+import Cursor from "@/components/Cursor/Cursor";
 import Menu from "@/components/Header/Menu";
 import React, { useRef } from "react";
 

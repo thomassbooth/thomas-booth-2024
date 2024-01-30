@@ -1,12 +1,12 @@
 import { create } from "zustand";
 
 type State = {
-  hover: boolean;
+  hover: any;
   // selectedProject: null | Project
 };
 
 type Action = {
-  setHover: (hover: boolean) => void;
+  setHover: (hover: any) => void;
 };
 
 // Create your store, which includes both state and (optionally) actions

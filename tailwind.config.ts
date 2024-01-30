@@ -16,7 +16,11 @@ const config: Config = {
       colors: {
         gray: {
           text: '#383632'
+        },
+        loading: {
+          background: '#DEDED5'
         }
+        
       }
     },
   },

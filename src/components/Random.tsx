@@ -13,7 +13,7 @@ const Random = () => {
       }}
       onMouseEnter={() => {
         console.log('entering')
-        setHover(true);
+        setHover({type: 'other'});
       }}
     >
       {hover ? "true" : "false"}

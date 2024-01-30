@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 import "./globals.css";
 import Loading from "@/components/Loading";
 import Cursor from "@/components/Cursor";
+import CursorMenu from "@/layouts/CursorMenu";
 
 const OverusedGrotesk = localFont({
-  src: '../../public/fonts/OverusedGrotesk-VF.woff2',
-  display: 'swap',
-})
+  src: "../../public/fonts/OverusedGrotesk-VF.woff2",
+  display: "swap",
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,8 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={OverusedGrotesk.className}>
-        <Loading/>
-        {children}
+        <Loading />
+        <CursorMenu>{children}</CursorMenu>
       </body>
     </html>
   );

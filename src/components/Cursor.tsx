@@ -140,7 +140,7 @@ const Cursor = ({ stickyElement }: { stickyElement: React.MutableRefObject<any>}
       transformTemplate={({ rotate, scaleX, scaleY }) =>
         `rotate(${rotate}) scaleX(${scaleX}) scaleY(${scaleY})`
       }
-      className="flex justify-center items-center w-6 h-6 fixed rounded-full bg-black pointer-events-none"
+      className="flex justify-center items-center w-6 h-6 fixed rounded-full z-10 bg-black pointer-events-none"
       animate={{
         width: cursorSize,
         height: cursorSize,

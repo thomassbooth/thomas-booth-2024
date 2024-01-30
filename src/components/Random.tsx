@@ -13,10 +13,10 @@ const Random = () => {
   const router = useRouter();
   return (
     <div
-      onClick={() => {
-        setCursor({size: 16, type: 'none'})
-        router.push("test");
-      }}
+      // onClick={() => {
+      //   setCursor({size: 16, type: 'none'})
+      //   router.push("test");
+      // }}
       className="bg-red-300 w-[1000px] h-[200px] text-white z-20"
       onMouseLeave={() => {
         setCursor({ size: 16, type: "none" });

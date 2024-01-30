@@ -9,6 +9,7 @@ export default function Home() {
       <Random/>
       <Card colour = {'green'}/>
       <Card colour = {'red'} />
+      <Card colour = {'blue'} />
       <Cursor/>
     </main>
   );

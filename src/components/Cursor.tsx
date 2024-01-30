@@ -14,7 +14,7 @@ const Cursor = () => {
   const [hover, setHover] = useHover((state) => [state.hover, state.setHover]);
 
   const cursorRef = useRef<any>();
-  const cursorSize = 12;
+  const cursorSize = 24;
 
   const mouse = {
     x: useMotionValue(0),
@@ -45,11 +45,10 @@ const Cursor = () => {
 
     if (!hover) {
       const absDistance = Math.max(Math.abs(distance.x), Math.abs(distance.y));
-      const newScaleX = transform(absDistance, [0, width], [1, 1.2]);
-      const newScaleY = transform(absDistance, [0, width], [1, 0.8]);
+      const newScaleX = transform(absDistance, [0, (width * 3) / 2], [1, 1.3]);
+      const newScaleY = transform(absDistance, [0, (width * 3) / 2], [1, 0.6]);
 
       const newAngle = Math.atan2(distance.y, distance.x);
-      // angle.set(`${newAngle}rad`)
       animate(cursorRef.current, { rotate: `${newAngle}rad` }, { duration: 0 });
       scale.x.set(newScaleX);
       scale.y.set(newScaleY);
@@ -61,8 +60,24 @@ const Cursor = () => {
   useEffect(() => {
     window.addEventListener("mousemove", manageMouseMove);
 
-    if (!hover) animate(cursorRef.current, {scaleX: 1, scaleY: 1}, {duration: 0.5, type: 'spring'})
-    if (hover) animate(cursorRef.current, {scaleX: 5, scaleY: 5}, {duration: 0.5, type: 'spring'})
+    if (!hover)
+      animate(
+        cursorRef.current,
+        { scaleX: 1, scaleY: 1 },
+        { duration: 0.5, type: "spring" }
+      );
+    if (hover) {
+      animate(
+        cursorRef.current,
+        { scaleX: 5, scaleY: 5 },
+        { duration: 0.5, type: "spring" }
+      );
+      animate(
+        cursorRef.current,
+        { rotate: 0 },
+        { duration: 0, type: "spring" }
+      );
+    }
     return () => window.removeEventListener("mousemove", manageMouseMove);
   }, [hover]);
 
@@ -72,7 +87,7 @@ const Cursor = () => {
       transformTemplate={({ rotate, scaleX, scaleY }) =>
         `rotate(${rotate}) scaleX(${scaleX}) scaleY(${scaleY})`
       }
-      className="w-3 h-3 fixed rounded-full z-10 bg-black pointer-events-none"
+      className="w-6 h-6 fixed rounded-full z-10 border-2 border-black pointer-events-none"
       style={{
         left: smoothMouse.x,
         top: smoothMouse.y,
@@ -80,6 +95,7 @@ const Cursor = () => {
         scaleY: scale.y,
       }}
     >
+      {hover && <span>HELLOOO</span>}
     </motion.div>
   );
 };

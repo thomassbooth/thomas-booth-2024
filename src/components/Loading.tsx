@@ -27,8 +27,10 @@ const Loading = ({ children }: any) => {
       {!loaded && (
         <motion.div
           exit={{ height: 0 }}
-          className="fixed top-0  w-screen bg-black z-20 h-1/2"
-        ></motion.div>
+          className="fixed top-0 flex justify-center items-center w-screen bg-black z-20 h-screen"
+        >
+          <span className = 'text-gray-text text-9xl font-bold'>THOMAS BOOTH FOLIO</span>
+        </motion.div>
       )}
     </AnimatePresence>
   );

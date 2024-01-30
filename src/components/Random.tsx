@@ -1,6 +1,7 @@
 "use client";
 import useHover from "@/store/useCursor";
 import React from "react";
+import Card from "./Card";
 
 const Random = () => {
   const [cursor, setCursor] = useHover((state) => [state.cursor, state.setCursor]);
@@ -13,7 +14,7 @@ const Random = () => {
       }}
       onMouseEnter={() => {
         console.log('entering')
-        setCursor({size: 100, type: 'random'});
+        setCursor({size: 100, type: 'random', content: <Card colour="red"/>});
       }}
     >
       {cursor.type === 'random' ? "true" : "false"}

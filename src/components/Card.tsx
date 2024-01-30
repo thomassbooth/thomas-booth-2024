@@ -11,7 +11,7 @@ const Card: React.FC<cardProps> = ({ colour }) => {
   const [cursor, setCursor] = useCursor((state) => [state.cursor, state.cursor]);
   return (
     <div
-      className="h-screen flex items-center justify-center sticky top-0"
+      className="h-screen flex items-center justify-center sticky top-0 "
     >
       <div
         style={{ backgroundColor: colour }}

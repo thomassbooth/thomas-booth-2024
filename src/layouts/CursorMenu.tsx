@@ -1,14 +1,17 @@
 "use client";
 
 import Cursor from "@/components/Cursor/Cursor";
-import Menu from "@/components/Header/Menu";
-import React, { useRef } from "react";
+import MenuButton from "@/components/Header/MenuButton";
+import Menu from "@/components/Header/Nav/Menu";
+import React, { useRef, useState } from "react";
 
 const CursorMenu = ({ children }: { children: React.ReactNode }) => {
   const stickyElement = useRef(null);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div>
-      <Menu ref={stickyElement} />
+      <MenuButton ref={stickyElement} isOpen = {isOpen} setIsOpen = {setIsOpen}/>
+      <Menu isOpen = {isOpen} setIsOpen = {setIsOpen}/>
       <Cursor stickyElement={stickyElement} />
       {children}
     </div>

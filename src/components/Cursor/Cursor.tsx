@@ -149,7 +149,7 @@ const Cursor = ({
       transformTemplate={({ rotate, scaleX, scaleY }) =>
         `rotate(${rotate}) scaleX(${scaleX}) scaleY(${scaleY})`
       }
-      className="flex justify-center items-center w-4 h-4 fixed rounded-full z-10 bg-black pointer-events-none overflow-hidden"
+      className={`${cursor.className} ${cursor.colour ? cursor.colour : "bg-common-gray"} flex justify-center items-center w-4 h-4 fixed rounded-full z-10 pointer-events-none overflow-hidden transition-colors duration-500`}
       animate={{
         width: cursorSize,
         height: cursorSize,

@@ -1,8 +1,18 @@
 import { create } from "zustand";
 
+interface cursorProps {
+  size: number,
+  type: string,
+  className?: string,
+  colour?: string,
+  content?: any,
+}
+
+
 type State = {
-  cursor: any;
+  cursor: cursorProps;
   // selectedProject: null | Project
+  
 };
 
 type Action = {

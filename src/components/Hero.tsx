@@ -12,8 +12,8 @@ const Hero = () => {
     state.setCursor,
   ]);
   return (
-    <div className="h-screen w-screen px-[5%] flex flex-col items-center">
-      <h1 className="mt-[17.5rem] w-full flex flex-col text-common-gray uppercase text-hero cursor-default">
+    <div className="h-screen w-screen px-[7%] flex flex-col items-center justify-center">
+      <h1 className="w-full flex flex-col text-common-gray uppercase text-hero cursor-default">
         <span className="inline-flex overflow-hidden">
           <motion.span
             whileInView="visible"
@@ -23,7 +23,7 @@ const Hero = () => {
               hidden: { y: "100%", opacity: 0.5 },
               visible: { y: "0%", opacity: 1 },
             }}
-            transition={{ delay: 1.4, duration: 0.4, ease: "easeOut" }}
+            transition={{ delay: 1, duration: 1, ease: "easeIn" }}
             className="font-light text-left"
           >
             Folio 2024,
@@ -38,7 +38,7 @@ const Hero = () => {
               hidden: { y: "100%", opacity: 0.5 },
               visible: { y: "0%", opacity: 1 },
             }}
-            transition={{ delay: 1.5, duration: 0.4, ease: "easeOut" }}
+            transition={{ delay: 1.2, duration: 1, ease: "easeIn" }}
             className="font-semibold text-right block"
             onMouseLeave={() => {
               setCursor({ size: 16, type: "none" });
@@ -66,7 +66,7 @@ const Hero = () => {
             hidden: { y: "100%", opacity: 0.5 },
             visible: { y: "0%", opacity: 1 },
           }}
-          transition={{ delay: 1.6, duration: 0.4, ease: "easeOut" }}
+          transition={{ delay: 1.4, duration: 1, ease: "easeIn" }}
           className="uppercase text-right font-light tracking-[.01rem]"
         >
           Dubai, United Arab Emirates.

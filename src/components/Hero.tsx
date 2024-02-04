@@ -34,7 +34,7 @@ const Hero = () => {
         </div>
       </h1>
       <div className="w-full">
-        <h2 className="uppercase text-right font-light tracking-[.01rem]">
+        <h2 className="uppercase text-right font-light text-[1rem] tracking-[.01rem]">
           Dubai, United Arab Emirates.
         </h2>
       </div>

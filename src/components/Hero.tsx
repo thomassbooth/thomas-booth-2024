@@ -7,7 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { easein, easing } from "./anim";
 
 const Hero = () => {
-  const container = useRef(null)
+  const container = useRef(null);
   const [cursor, setCursor] = useHover((state) => [
     state.cursor,
     state.setCursor,
@@ -15,14 +15,22 @@ const Hero = () => {
 
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ['start start', 'end start']
-  }) 
+    offset: ["start start", "end start"],
+  });
 
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
+  const ysmaller = useTransform(scrollYProgress, [0, 1], ["0vh", "24vh"]);
+  const ybehind = useTransform(scrollYProgress, [0, 1], ["0vh", "20vh"]);
+  const ysmallest = useTransform(scrollYProgress, [0, 1], ["0vh", "19vh"]);
   return (
-    <div ref = {container} className="h-screen w-screen px-[7%] flex flex-col items-center justify-center top-0">
-      <motion.h1 style = {{opacity}} className="w-full flex flex-col text-common-gray uppercase cursor-default">
-        <span className="inline-flex overflow-hidden">
+    <div
+      ref={container}
+      className="h-screen w-screen px-[7%] flex flex-col items-center justify-center top-0"
+    >
+      <h1 className="w-full flex flex-col text-common-gray uppercase cursor-default">
+        <motion.span
+          style={{ y: ysmaller }}
+          className="inline-flex overflow-hidden"
+        >
           <motion.span
             whileInView="visible"
             initial="hidden"
@@ -36,8 +44,11 @@ const Hero = () => {
           >
             Folio 2024,
           </motion.span>
-        </span>
-        <div className="w-full justify-end leading-none inline-flex overflow-hidden">
+        </motion.span>
+        <motion.div
+          style={{ y: ybehind }}
+          className="w-full justify-end leading-none inline-flex overflow-hidden"
+        >
           <motion.span
             whileInView="visible"
             initial="hidden"
@@ -63,9 +74,12 @@ const Hero = () => {
             Thomas Booth
           </motion.span>
           <div className="w-4 h-4 mt-9 ml-2 rounded-full bg-common-gray"></div>
-        </div>
-      </motion.h1>
-      <div className="w-full cursor-default text-lg inline-flex justify-end overflow-hidden">
+        </motion.div>
+      </h1>
+      <motion.div
+        style={{ y: ysmallest }}
+        className="w-full cursor-default text-lg inline-flex justify-end overflow-hidden"
+      >
         <motion.h2
           whileInView="visible"
           initial="hidden"
@@ -79,7 +93,7 @@ const Hero = () => {
         >
           Dubai, United Arab Emirates.
         </motion.h2>
-      </div>
+      </motion.div>
     </div>
   );
 };

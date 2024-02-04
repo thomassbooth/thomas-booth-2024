@@ -26,9 +26,6 @@ const config: Config = {
             cream: '#f8fafc'
           }
         },
-        loading: {
-          background: '#DEDED5'
-        },
         palette: {
           green: {
             light: '#BECAC4',

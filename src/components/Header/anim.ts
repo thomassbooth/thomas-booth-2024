@@ -20,7 +20,7 @@ export const menu = {
   },
   closed: {
     height: "0vh",
-    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 1 },
+    transition: { duration: 1.5, ease: [0.76, 0, 0.24, 1], delay: 0.5 },
   },
 };
 

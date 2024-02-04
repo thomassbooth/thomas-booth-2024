@@ -3,6 +3,8 @@
 import useHover from "@/store/useCursor";
 import React from "react";
 import Me from "./Hover/Me";
+import { motion } from "framer-motion";
+import { easein, easing } from "./anim";
 
 const Hero = () => {
   const [cursor, setCursor] = useHover((state) => [
@@ -10,11 +12,33 @@ const Hero = () => {
     state.setCursor,
   ]);
   return (
-    <div className="h-screen w-screen px-[5%] flex flex-col items-center sticky">
+    <div className="h-screen w-screen px-[5%] flex flex-col items-center">
       <h1 className="mt-[17.5rem] w-full flex flex-col text-common-gray uppercase text-hero cursor-default">
-        <span className="font-light text-left">Folio 2024,</span>
-        <div className="w-full flex justify-end">
-          <span
+        <span className="inline-flex overflow-hidden">
+          <motion.span
+            whileInView="visible"
+            initial="hidden"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { y: "100%", opacity: 0.5 },
+              visible: { y: "0%", opacity: 1 },
+            }}
+            transition={{ delay: 1.4, duration: 0.4, ease: "easeOut" }}
+            className="font-light text-left"
+          >
+            Folio 2024,
+          </motion.span>
+        </span>
+        <div className="w-full justify-end leading-none inline-flex overflow-hidden">
+          <motion.span
+            whileInView="visible"
+            initial="hidden"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { y: "100%", opacity: 0.5 },
+              visible: { y: "0%", opacity: 1 },
+            }}
+            transition={{ delay: 1.5, duration: 0.4, ease: "easeOut" }}
             className="font-semibold text-right block"
             onMouseLeave={() => {
               setCursor({ size: 16, type: "none" });
@@ -23,20 +47,30 @@ const Hero = () => {
               setCursor({
                 size: 100,
                 type: "random",
-                colour: "bg-red-200",
+                colour: "bg-palette-green-light",
                 content: <Me />,
               });
             }}
           >
             Thomas Booth
-          </span>
+          </motion.span>
           <div className="w-4 h-4 mt-7 ml-2 rounded-full bg-common-gray"></div>
         </div>
       </h1>
-      <div className="w-full cursor-default text-lg">
-        <h2 className="uppercase text-right font-light tracking-[.01rem]">
+      <div className="w-full cursor-default text-lg inline-flex justify-end overflow-hidden">
+        <motion.h2
+          whileInView="visible"
+          initial="hidden"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { y: "100%", opacity: 0.5 },
+            visible: { y: "0%", opacity: 1 },
+          }}
+          transition={{ delay: 1.6, duration: 0.4, ease: "easeOut" }}
+          className="uppercase text-right font-light tracking-[.01rem]"
+        >
           Dubai, United Arab Emirates.
-        </h2>
+        </motion.h2>
       </div>
     </div>
   );

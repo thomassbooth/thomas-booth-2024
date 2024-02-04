@@ -30,7 +30,6 @@ export default function RootLayout({
         className={`${OverusedGrotesk.className} bg-common-background-cream`}
       >
         <LenisScroll>
-          <Loading />
           <CursorMenu>{children}</CursorMenu>
         </LenisScroll>
       </body>

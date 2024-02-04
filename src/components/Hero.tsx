@@ -11,8 +11,8 @@ const Hero = () => {
   ]);
   return (
     <div className="h-screen w-screen px-[5%] flex flex-col items-center">
-      <h1 className="tracking-[-.3rem] mt-[17.5rem] w-full flex flex-col text-common-gray uppercase text-[10rem] leading-none cursor-default">
-        <span className="font-extralight text-left">Hi There!</span>
+      <h1 className="mt-[17.5rem] w-full flex flex-col text-common-gray uppercase text-hero cursor-default">
+        <span className="font-extralight text-left">Folio 2024,</span>
         <div className="w-full flex justify-end">
           <span
             className="font-semibold text-right block"

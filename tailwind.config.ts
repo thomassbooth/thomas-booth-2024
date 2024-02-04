@@ -14,7 +14,11 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontSize: {
-        'hero': ['11cqw', {
+        'hero-title': ['11cqw', {
+          'letterSpacing': '-.3rem',
+          'lineHeight': '1'
+        }],
+        'hero-subtitle': ['5.5cqw', {
           'letterSpacing': '-.3rem',
           'lineHeight': '1'
         }],

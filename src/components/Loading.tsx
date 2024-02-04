@@ -17,31 +17,38 @@ const Loading: React.FC<loadingProps> = ({ loaded, setLoaded }) => {
 
   return (
     <>
-      <div className="w-screen h-screen flex justify-center items-center">
-        <span className="fixed leading-none inline-flex overflow-hidden uppercase gap-10 text-common-background-cream">
+      <div className="fixed w-screen h-screen flex justify-center items-center z-50 top-0">
+        <span className="leading-none inline-flex overflow-hidden uppercase text-common-background-cream">
+        <motion.div
+            initial={{ y: -100 }}
+            animate={{ y: 0, transition: { duration: 0.4, ease: 'easeIn' } }}
+            exit={{ y: -150, transition: {  duration: 0.5 } }}
+            className="w-4 h-4 mt-16 mr-2 rounded-full z-50 bg-common-background-cream"
+          >
+          </motion.div>
           <motion.span
             initial={{ y: 100 }}
-            animate={{ y: 0, transition: { delay: 0.5, duration: 0.5 } }}
-            exit={{ opacity: 0 }}
-            className="text-loading-background text-9xl font-bold z-50"
+            animate={{ y: 0, transition: { delay: 0.2, duration: 0.4, ease: 'easeIn' } }}
+            exit={{ y: -150, transition: {  duration: 0.5 } }}
+            className="text-9xl font-light z-50"
           >
-            THOMAS
-          </motion.span>
-          <motion.span
-            initial={{ y: -150 }}
-            animate={{ y: 0, transition: { delay: 0.5, duration: 0.5 } }}
-            exit={{ opacity: 0 }}
-            className="text-loading-background text-9xl font-bold z-50"
-          >
-            BOOTH
+            T
           </motion.span>
           <motion.span
             initial={{ y: 100 }}
-            animate={{ y: 0, transition: { delay: 0.5, duration: 0.5 } }}
-            exit={{ opacity: 0 }}
-            className="text-loading-background text-9xl font-bold z-50"
+            animate={{ y: 0, transition: { delay: 0.25, duration: 0.4, ease: 'easeIn' } }}
+            exit={{ y: -150, transition: {  duration: 0.5 } }}
+            className="text-9xl font-bold z-50"
           >
-            FOLIO
+            B
+          </motion.span>
+          <motion.span
+            initial={{ y: -100 }}
+            animate={{ y: 0, transition: {  duration: 0.4, ease: 'easeIn' } }}
+            exit={{ y: -150, transition: {  duration: 0.5 } }}
+            className="text-lg font-light z-50"
+          >
+            2024
           </motion.span>
         </span>
       </div>

@@ -54,7 +54,7 @@ const Hero = () => {
           >
             Thomas Booth
           </motion.span>
-          <div className="w-4 h-4 mt-7 ml-2 rounded-full bg-common-gray"></div>
+          <div className="w-4 h-4 mt-9 ml-2 rounded-full bg-common-gray"></div>
         </div>
       </h1>
       <div className="w-full cursor-default text-lg inline-flex justify-end overflow-hidden">

@@ -19,33 +19,38 @@ const Loading: React.FC<loadingProps> = ({ loaded, setLoaded }) => {
     <>
       <div className="fixed w-screen h-screen flex justify-center items-center z-50 top-0">
         <span className="leading-none inline-flex overflow-hidden uppercase text-common-background-cream">
-        <motion.div
+          <motion.div
             initial={{ y: -100 }}
-            animate={{ y: 0, transition: { duration: 0.4, ease: 'easeIn' } }}
-            exit={{ y: -150, transition: {  duration: 0.5 } }}
+            animate={{ y: 0, transition: { duration: 0.4, ease: "easeIn" } }}
+            exit={{ y: -150, transition: { duration: 0.5 } }}
             className="w-4 h-4 mt-16 mr-2 rounded-full z-50 bg-common-background-cream"
-          >
-          </motion.div>
+          />
           <motion.span
             initial={{ y: 100 }}
-            animate={{ y: 0, transition: { delay: 0.2, duration: 0.4, ease: 'easeIn' } }}
-            exit={{ y: -150, transition: {  duration: 0.5 } }}
+            animate={{
+              y: 0,
+              transition: { delay: 0.2, duration: 0.4, ease: "easeIn" },
+            }}
+            exit={{ y: -150, transition: { duration: 0.5 } }}
             className="text-9xl font-light z-50"
           >
             T
           </motion.span>
           <motion.span
             initial={{ y: 100 }}
-            animate={{ y: 0, transition: { delay: 0.25, duration: 0.4, ease: 'easeIn' } }}
-            exit={{ y: -150, transition: {  duration: 0.5 } }}
+            animate={{
+              y: 0,
+              transition: { delay: 0.25, duration: 0.4, ease: "easeIn" },
+            }}
+            exit={{ y: -150, transition: { duration: 0.5 } }}
             className="text-9xl font-bold z-50"
           >
             B
           </motion.span>
           <motion.span
             initial={{ y: -100 }}
-            animate={{ y: 0, transition: {  duration: 0.4, ease: 'easeIn' } }}
-            exit={{ y: -150, transition: {  duration: 0.5 } }}
+            animate={{ y: 0, transition: { duration: 0.4, ease: "easeIn" } }}
+            exit={{ y: -150, transition: { duration: 0.5 } }}
             className="text-lg font-light z-50"
           >
             2024

@@ -4,8 +4,10 @@ import { GeistSans } from "geist/font/sans";
 import localFont from "next/font/local";
 import "./globals.css";
 import Loading from "@/components/Loading";
-import CursorMenu from "@/layouts/CursorMenu";
+import CursorMenu from "@/layouts/LoadingLayout";
 import LenisScroll from "@/layouts/LenisScroll";
+import LoadingLayout from "@/layouts/LoadingLayout";
+import Navbar from "@/components/Header/Navbar";
 
 const OverusedGrotesk = localFont({
   src: "../../public/fonts/OverusedGrotesk-VF.woff2",
@@ -30,7 +32,10 @@ export default function RootLayout({
         className={`${OverusedGrotesk.className} bg-common-background-cream`}
       >
         <LenisScroll>
-          <CursorMenu>{children}</CursorMenu>
+          <LoadingLayout>
+            <Navbar />
+            {children}
+          </LoadingLayout>
         </LenisScroll>
       </body>
     </html>

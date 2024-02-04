@@ -1,19 +1,27 @@
 "use client";
 
 import useHover from "@/store/useCursor";
-import React from "react";
+import React, { useRef } from "react";
 import Me from "./Hover/Me";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { easein, easing } from "./anim";
 
 const Hero = () => {
+  const container = useRef(null)
   const [cursor, setCursor] = useHover((state) => [
     state.cursor,
     state.setCursor,
   ]);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end start']
+  }) 
+
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
   return (
-    <div className="h-screen w-screen px-[7%] flex flex-col items-center justify-center sticky top-0">
-      <h1 className="w-full flex flex-col text-common-gray uppercase cursor-default">
+    <div ref = {container} className="h-screen w-screen px-[7%] flex flex-col items-center justify-center top-0">
+      <motion.h1 style = {{opacity}} className="w-full flex flex-col text-common-gray uppercase cursor-default">
         <span className="inline-flex overflow-hidden">
           <motion.span
             whileInView="visible"
@@ -56,7 +64,7 @@ const Hero = () => {
           </motion.span>
           <div className="w-4 h-4 mt-9 ml-2 rounded-full bg-common-gray"></div>
         </div>
-      </h1>
+      </motion.h1>
       <div className="w-full cursor-default text-lg inline-flex justify-end overflow-hidden">
         <motion.h2
           whileInView="visible"

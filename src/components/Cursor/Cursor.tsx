@@ -100,7 +100,7 @@ const Cursor = ({
   };
 
   const manageMouseOver = () => {
-    setCursor({ size: 60, type: "menu" });
+    setCursor({ size: 50, type: "menu" });
   };
 
   const manageMouseLeave = () => {

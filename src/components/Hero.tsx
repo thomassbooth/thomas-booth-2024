@@ -33,8 +33,8 @@ const Hero = () => {
           <div className="w-4 h-4 mt-7 ml-2 rounded-full bg-common-gray"></div>
         </div>
       </h1>
-      <div className="w-full">
-        <h2 className="uppercase text-right font-light text-[1rem] tracking-[.01rem]">
+      <div className="w-full cursor-default text-lg">
+        <h2 className="uppercase text-right font-light tracking-[.01rem]">
           Dubai, United Arab Emirates.
         </h2>
       </div>

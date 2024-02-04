@@ -15,7 +15,7 @@ const Loading = ({ children }: any) => {
       {!loaded && (
         <motion.div
           exit={{ height: 0 }}
-          className="fixed top-0 flex justify-center items-center w-screen bg-black z-20 h-screen"
+          className="fixed top-0 flex justify-center items-center w-screen bg-black z-50 h-screen"
         >
           <span className="text-loading-background text-9xl font-bold">
             THOMAS BOOTH FOLIO

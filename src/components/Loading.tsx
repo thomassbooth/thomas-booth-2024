@@ -32,7 +32,7 @@ const Loading: React.FC<loadingProps> = ({ loaded, setLoaded }) => {
               transition: { delay: 0.2, duration: 0.4, ease: "easeIn" },
             }}
             exit={{ y: -150, transition: { duration: 0.5 } }}
-            className="text-9xl font-light z-50"
+            className="text-9xl font-semibold z-50"
           >
             T
           </motion.span>
@@ -43,7 +43,7 @@ const Loading: React.FC<loadingProps> = ({ loaded, setLoaded }) => {
               transition: { delay: 0.25, duration: 0.4, ease: "easeIn" },
             }}
             exit={{ y: -150, transition: { duration: 0.5 } }}
-            className="text-9xl font-bold z-50"
+            className="text-9xl font-semibold z-50"
           >
             B
           </motion.span>

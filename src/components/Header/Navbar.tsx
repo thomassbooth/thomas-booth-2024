@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="relative w-full flex justify-end">
         <MenuButton ref={stickyElement} isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <div className="absolute top-0 w-full h-[54px] flex items-center justify-between overflow-hidden">
+      <div className="absolute top-0 w-full h-[54px] flex items-center justify-between overflow-hidden pointer-events-none">
         <div className="inline-block overflow-hidden">
           <motion.div
             whileInView="visible"
@@ -28,8 +28,8 @@ const Navbar = () => {
             className="flex items-center pl-5 gap-2"
           >
             <div className="w-0.5 h-0.5 z-30 bg-black rounded-full" />
-            <span className="text-lg font-light">T</span>
-            <span className="text-lg font-light">B</span>
+            <span className="text-lg">T</span>
+            <span className="text-lg">B</span>
           </motion.div>
         </div>
         <div className="inline-block overflow-hidden">

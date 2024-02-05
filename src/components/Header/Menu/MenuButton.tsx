@@ -21,10 +21,10 @@ const MenuButton = forwardRef<HTMLDivElement, MenuProps>(function Menu(props, re
             onClick={() => {
               setIsOpen(!isOpen);
             }}
-            className={`cursor-pointer relative flex gap-[6px] flex-col p-[12px] pointer-events-none before:block before:w-[25px] before:h-[1px] before:bg-common-background-cream ${
+            className={`cursor-pointer relative flex gap-[6px] flex-col p-[12px] pointer-events-none before:block before:w-[25px] before:h-[1.5px] before:bg-common-background-cream ${
               isOpen &&
               "before:rotate-45 after:-rotate-45 before:translate-y-[7px]"
-            }   after:block after:w-[25px] after:h-[1px] after:bg-common-background-cream after:transition-all before:transition-all before:duration-1000 after:duration-1000`}
+            }   after:block after:w-[25px] after:h-[1.5px] after:bg-common-background-cream after:transition-all before:transition-all before:duration-1000 after:duration-1000`}
           > 
             <div
               ref={ref}

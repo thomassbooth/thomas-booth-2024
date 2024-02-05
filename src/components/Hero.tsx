@@ -5,6 +5,7 @@ import React, { useRef } from "react";
 import Me from "./Hover/Me";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { easein, easing } from "./anim";
+import HalfMoon from "./Svgs/HalfMoon";
 
 const Hero = () => {
   const container = useRef(null);
@@ -21,11 +22,26 @@ const Hero = () => {
   const ysmaller = useTransform(scrollYProgress, [0, 1], ["0vh", "24vh"]);
   const ybehind = useTransform(scrollYProgress, [0, 1], ["0vh", "20vh"]);
   const ysmallest = useTransform(scrollYProgress, [0, 1], ["0vh", "19vh"]);
+  const ymoon = useTransform(scrollYProgress, [0, 1], ["0vh", "15vh"]);
+
   return (
     <div
       ref={container}
       className="h-screen w-screen px-[7%] flex flex-col items-center justify-center top-0"
     >
+      {/* FOLIO 2024 line */}
+      <HalfMoon
+        style = {{y: ymoon}}
+        whileInView="visible"
+        initial="hidden"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 0.2 },
+        }}
+        transition={{ delay: 2, duration: 1, ease: "easeIn" }}
+        className="absolute left-0 w-1/2 h-1/2 pointer-events-none"
+      />
       <h1 className="w-full flex flex-col text-common-gray uppercase cursor-default">
         <motion.span
           style={{ y: ysmaller }}
@@ -40,11 +56,25 @@ const Hero = () => {
               visible: { y: "0%", opacity: 1 },
             }}
             transition={{ delay: 1, duration: 1, ease: "easeIn" }}
+            className="font-semibold text-left text-hero-subtitle"
+          >
+            Folio&nbsp;
+          </motion.span>
+          <motion.span
+            whileInView="visible"
+            initial="hidden"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { y: "100%", opacity: 0.5 },
+              visible: { y: "0%", opacity: 1 },
+            }}
+            transition={{ delay: 1.2, duration: 1, ease: "easeIn" }}
             className="font-light text-left text-hero-subtitle"
           >
-            Folio 2024,
+            2024,
           </motion.span>
         </motion.span>
+        {/* THOMAS BOOTH LINE */}
         <motion.div
           style={{ y: ybehind }}
           className="w-full justify-end leading-none inline-flex overflow-hidden"
@@ -71,9 +101,33 @@ const Hero = () => {
               });
             }}
           >
-            Thomas Booth
+            Thomas&nbsp;
           </motion.span>
-          <div className="w-4 h-4 mt-9 ml-2 rounded-full bg-common-gray"></div>
+          <motion.span
+            whileInView="visible"
+            initial="hidden"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { y: "100%", opacity: 0.5 },
+              visible: { y: "0%", opacity: 1 },
+            }}
+            transition={{ delay: 1.8, duration: 1, ease: "easeIn" }}
+            className="font-light text-right block text-hero-title flex"
+            onMouseLeave={() => {
+              setCursor({ size: 16, type: "none" });
+            }}
+            onMouseEnter={() => {
+              setCursor({
+                size: 100,
+                type: "random",
+                colour: "bg-palette-green-light",
+                content: <Me />,
+              });
+            }}
+          >
+            Booth
+            <div className="w-3 h-3 mt-9 ml-2 rounded-full bg-common-gray" />
+          </motion.span>
         </motion.div>
       </h1>
       <motion.div
@@ -88,7 +142,7 @@ const Hero = () => {
             hidden: { y: "100%", opacity: 0.5 },
             visible: { y: "0%", opacity: 1 },
           }}
-          transition={{ delay: 1.5, duration: 1, ease: "easeIn" }}
+          transition={{ delay: 2, duration: 1, ease: "easeIn" }}
           className="uppercase text-right font-light tracking-[.01rem]"
         >
           Dubai, United Arab Emirates.

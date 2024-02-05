@@ -2,9 +2,8 @@ import React from "react";
 import { HTMLMotionProps, SVGMotionProps, motion } from 'framer-motion'
 
 interface halfMoonProps extends SVGMotionProps<SVGSVGElement> {
-    className?: string;
-    style?: any
-  }
+  className?: string;
+}
 
 const HalfMoon: React.FC<halfMoonProps> = ({className, style,  ...props}) => {
   return (
@@ -34,8 +33,8 @@ const HalfMoon: React.FC<halfMoonProps> = ({className, style,  ...props}) => {
             y2="1186"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="#DDDDD5"></stop>
-            <stop offset="1" stop-color="#DDDDD5" stop-opacity="0"></stop>
+            <stop stopColor="#DDDDD5"></stop>
+            <stop offset="1" stopColor="#DDDDD5" stopOpacity="0"></stop>
           </linearGradient>
         </defs>
       </motion.svg>

@@ -56,7 +56,7 @@ const Hero = () => {
               visible: { y: "0%", opacity: 1 },
             }}
             transition={{ delay: 1, duration: 1, ease: "easeIn" }}
-            className="font-semibold text-left text-hero-subtitle"
+            className="font-semibold text-left text-subtitle"
           >
             Folio&nbsp;
           </motion.span>
@@ -69,7 +69,7 @@ const Hero = () => {
               visible: { y: "0%", opacity: 1 },
             }}
             transition={{ delay: 1.2, duration: 1, ease: "easeIn" }}
-            className="font-light text-left text-hero-subtitle"
+            className="font-light text-left text-subtitle"
           >
             2024,
           </motion.span>
@@ -88,7 +88,7 @@ const Hero = () => {
               visible: { y: "0%", opacity: 1 },
             }}
             transition={{ delay: 1.5, duration: 1, ease: "easeIn" }}
-            className="font-semibold text-right block text-hero-title"
+            className="font-semibold text-right block text-title"
             onMouseLeave={() => {
               setCursor({ size: 16, type: "none" });
             }}
@@ -112,7 +112,7 @@ const Hero = () => {
               visible: { y: "0%", opacity: 1 },
             }}
             transition={{ delay: 1.8, duration: 1, ease: "easeIn" }}
-            className="font-light text-right block text-hero-title flex"
+            className="font-light text-right flex text-title"
             onMouseLeave={() => {
               setCursor({ size: 16, type: "none" });
             }}

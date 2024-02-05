@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 
 const useStopScroll = () => {
   const overWriteScroll = () => {
-    scroll(0, 0);
+    window.scroll(0, 0);
   };
 
   useEffect(() => {
+    console.log('run')
     addEventListener("scroll", overWriteScroll);
 
-    return () => removeEventListener("scroll", overWriteScroll, false);
+    return () => {
+      console.log("removed")
+      removeEventListener("scroll", overWriteScroll, false);
+    };
   }, []);
 };
 

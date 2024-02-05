@@ -14,12 +14,18 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontSize: {
-        'hero-title': ['11cqw', {
+        'title': ['11cqw', {
           'letterSpacing': '-.3rem',
           'lineHeight': '1'
         }],
-        'hero-subtitle': ['5.5cqw', {
+        'subtitle': ['5.5cqw', {
           'letterSpacing': '-.3rem',
+          'lineHeight': '1'
+        }],
+        'heading': ['2rem', {
+          'lineHeight': '1'
+        }],
+        'text': ['3rem', {
           'lineHeight': '1'
         }],
       },
@@ -27,7 +33,8 @@ const config: Config = {
         common: {
           gray: '#333',
           background: {
-            cream: '#f8fafc'
+            cream: '#f8fafc',
+            gray: '#222'
           }
         },
         palette: {

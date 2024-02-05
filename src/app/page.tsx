@@ -9,6 +9,9 @@ export default function Home() {
     <main>
       <Hero/>
       <Introduction/>
+      <div className = 'h-screen'>
+
+      </div>
       <Random/>
     </main>
   );

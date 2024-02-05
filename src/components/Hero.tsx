@@ -143,7 +143,7 @@ const Hero = () => {
             visible: { y: "0%", opacity: 1 },
           }}
           transition={{ delay: 2, duration: 1, ease: "easeIn" }}
-          className="uppercase text-right font-light tracking-[.01rem]"
+          className="uppercase text-right font-light text-common-gray tracking-[.01rem]"
         >
           Dubai, United Arab Emirates.
         </motion.h2>

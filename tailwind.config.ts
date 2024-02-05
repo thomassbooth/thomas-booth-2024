@@ -22,10 +22,10 @@ const config: Config = {
           'letterSpacing': '-.3rem',
           'lineHeight': '1'
         }],
-        'heading': ['2rem', {
+        'heading': ['2.2rem', {
           'lineHeight': '1'
         }],
-        'text': ['3rem', {
+        'text': ['2.8rem', {
           'lineHeight': '1'
         }],
       },

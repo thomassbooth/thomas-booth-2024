@@ -22,7 +22,7 @@ const Random = () => {
         setCursor({ size: 16, type: "none" });
       }}
       onMouseEnter={() => {
-        setCursor({ size: 100, type: "random", content: <Project /> });
+        setCursor({ size: 100, type: "random", colour: 'bg-green-200',  content: <Project /> });
       }}
     >
       {cursor.type === "random" ? "true" : "false"}

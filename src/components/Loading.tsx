@@ -60,19 +60,19 @@ const Loading: React.FC<loadingProps> = ({ loaded, setLoaded }) => {
       </div>
       <motion.div
         exit={{ height: 0, transition: transition }}
-        className="fixed top-0 bg-common-gray left-0 w-1/4 z-40 h-screen"
+        className="fixed top-0 bg-common-background-gray left-0 w-1/4 z-40 h-screen"
       />
       <motion.div
         exit={{ height: 0, transition: transition }}
-        className="fixed bottom-0 bg-common-gray left-[25%] w-1/4 z-40 h-screen"
+        className="fixed bottom-0 bg-common-background-gray left-[25%] w-1/4 z-40 h-screen"
       />
       <motion.div
         exit={{ height: 0, transition: transition }}
-        className="fixed top-0 bg-common-gray w-1/4 left-[50%] flex justify-center items-center z-40 h-screen"
+        className="fixed top-0 bg-common-background-gray w-1/4 left-[50%] flex justify-center items-center z-40 h-screen"
       />
       <motion.div
         exit={{ height: 0, transition: transition }}
-        className="fixed bottom-0 bg-common-gray w-1/4 left-[75%] flex justify-center items-center z-40 h-screen"
+        className="fixed bottom-0 bg-common-background-gray w-1/4 left-[75%] flex justify-center items-center z-40 h-screen"
       />
     </>
   );

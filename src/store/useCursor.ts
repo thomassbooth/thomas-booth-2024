@@ -16,7 +16,7 @@ type State = {
 };
 
 type Action = {
-  setCursor: (hover: any) => void;
+  setCursor: (hover: cursorProps) => void;
 };
 
 // Create your store, which includes both state and (optionally) actions

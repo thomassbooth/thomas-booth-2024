@@ -43,7 +43,7 @@ const Navbar = () => {
             }}
             transition={{ delay: 1.8, duration: 0.5, ease: "easeIn" }}
           >
-            <span>2024</span>
+            <span className = 'flex items-center'><div className = 'mr-2 w-2 h-2 bg-green-400 border border-common-gray rounded-full'/>2024 - Avalible For Work</span>
           </motion.div>
         </div>
         <div className="w-[69px]" />

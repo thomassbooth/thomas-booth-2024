@@ -82,7 +82,7 @@ const Cursor = ({
       mouse.y.set(center.y - cursorSize / 2 + distance.y * 0.1);
       return;
     }
-    if (cursor.type === "random") {
+    if (cursor.type === "scale") {
       mouse.x.set(clientX - cursorSize / 2);
       mouse.y.set(clientY - cursorSize / 2);
     }
@@ -121,7 +121,7 @@ const Cursor = ({
         { duration: 0, type: "spring" }
       );
 
-    if (cursor.type === "random") {
+    if (cursor.type === "scale") {
       animate(
         cursorRef.current,
         { scaleX: 1, scaleY: 1, rotate: 0 },
@@ -149,7 +149,11 @@ const Cursor = ({
       transformTemplate={({ rotate, scaleX, scaleY }) =>
         `rotate(${rotate}) scaleX(${scaleX}) scaleY(${scaleY})`
       }
-      className={`${cursor.className} ${cursor.colour ? cursor.colour : "bg-common-background-cream mix-blend-difference"} flex justify-center items-center w-4 h-4 fixed rounded-full z-10 pointer-events-none overflow-hidden transition-colors duration-500`}
+      className={`${cursor.className} ${
+        cursor.colour
+          ? cursor.colour
+          : "bg-common-background-cream mix-blend-difference"
+      } flex justify-center items-center w-4 h-4 fixed rounded-full z-10 pointer-events-none overflow-hidden transition-colors duration-500`}
       animate={{
         width: cursorSize,
         height: cursorSize,
@@ -167,7 +171,7 @@ const Cursor = ({
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={cursor.type}
-            exit = {{opacity: 0, scale: 0}}
+            exit={{ opacity: 0, scale: 0 }}
             variants={content}
           >
             {cursor.content}

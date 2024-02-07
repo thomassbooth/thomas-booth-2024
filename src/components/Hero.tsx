@@ -4,7 +4,7 @@ import useHover from "@/store/useCursor";
 import React, { useRef } from "react";
 import Me from "./Hover/Me";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { easein, easing } from "./anim";
+import { CgMouse } from "react-icons/cg";
 import HalfMoon from "./Svgs/HalfMoon";
 
 const Hero = () => {
@@ -23,7 +23,7 @@ const Hero = () => {
   const ybehind = useTransform(scrollYProgress, [0, 1], ["0vh", "20vh"]);
   const ysmallest = useTransform(scrollYProgress, [0, 1], ["0vh", "19vh"]);
   const ymoon = useTransform(scrollYProgress, [0, 1], ["0vh", "15vh"]);
-
+  const scrollopacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   return (
     <div
       ref={container}
@@ -31,7 +31,7 @@ const Hero = () => {
     >
       {/* FOLIO 2024 line */}
       <HalfMoon
-        style = {{y: ymoon}}
+        style={{ y: ymoon }}
         whileInView="visible"
         initial="hidden"
         viewport={{ once: true }}
@@ -95,7 +95,7 @@ const Hero = () => {
             onMouseEnter={() => {
               setCursor({
                 size: 100,
-                type: "random",
+                type: "scale",
                 colour: "bg-palette-green-light",
                 content: <Me />,
               });
@@ -119,7 +119,7 @@ const Hero = () => {
             onMouseEnter={() => {
               setCursor({
                 size: 100,
-                type: "random",
+                type: "scale",
                 colour: "bg-palette-green-light",
                 content: <Me />,
               });
@@ -146,6 +146,23 @@ const Hero = () => {
           className="uppercase text-right font-light text-common-gray tracking-[.01rem]"
         >
           Dubai, United Arab Emirates.
+        </motion.h2>
+      </motion.div>
+      <motion.div className="cursor-default text-lg inline-flex overflow-hidden absolute bottom-0  mb-[5vh]">
+        <motion.h2
+          whileInView="visible"
+          initial="hidden"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 },
+          }}
+          transition={{ delay: 2.5, duration: 0.5, ease: "easeIn" }}
+          style={{ opacity: scrollopacity }}
+          className="uppercase gap-2 flex items-center text-right font-light text-common-gray tracking-[.01rem] "
+        >
+          scroll
+          <CgMouse size = {20} />
         </motion.h2>
       </motion.div>
     </div>

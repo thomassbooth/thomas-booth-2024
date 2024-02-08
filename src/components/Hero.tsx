@@ -24,12 +24,11 @@ const Hero = () => {
   const ybehind = useTransform(scrollYProgress, [0, 1], ["0vh", "20vh"]);
   const ysmallest = useTransform(scrollYProgress, [0, 1], ["0vh", "19vh"]);
   const ymoon = useTransform(scrollYProgress, [0, 1], ["0vh", "15vh"]);
-  const scrollopacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest > 0.02 && !hidden) {
+    if (latest > 0.01 && !hidden) {
       setHidden(true)
-    } else if (latest <= 0.02 && hidden) {
+    } else if (latest <= 0.01 && hidden) {
       setHidden(false)
     }
   })
@@ -152,7 +151,7 @@ const Hero = () => {
             hidden: { y: "100%", opacity: 0.5 },
             visible: { y: "0%", opacity: 1 },
           }}
-          transition={{ delay: 1.8, duration: 0.6, ease: "easeIn" }}
+          transition={{ delay: 1.8, duration: 0.8, ease: "easeIn" }}
           className="uppercase text-right font-light text-common-gray tracking-[.01rem]"
         >
           Dubai, United Arab Emirates.
@@ -166,7 +165,7 @@ const Hero = () => {
           hidden: {opacity: 0}
         }}
         transition={{duration: 0.5, ease: 'easeInOut'}}
-        className="cursor-default text-sm inline-flex overflow-hidden absolute bottom-0  mb-[2vh]">
+        className="cursor-default text-sm inline-flex overflow-hidden absolute bottom-0  mb-[1vh]">
         <motion.h2
           id = 'scrollText'
           whileInView="visible"

@@ -65,7 +65,7 @@ const Hero = () => {
               hidden: { y: "100%", opacity: 0.5 },
               visible: { y: "0%", opacity: 1 },
             }}
-            transition={{ delay: 1, duration: 1, ease: "easeIn" }}
+            transition={{ delay: 1, duration: 0.8, ease: "easeIn" }}
             className="font-semibold text-left text-subtitle"
           >
             Folio&nbsp;
@@ -78,7 +78,7 @@ const Hero = () => {
               hidden: { y: "100%", opacity: 0.5 },
               visible: { y: "0%", opacity: 1 },
             }}
-            transition={{ delay: 1.2, duration: 1, ease: "easeIn" }}
+            transition={{ delay: 1.2, duration: 0.8, ease: "easeIn" }}
             className="font-light text-left text-subtitle"
           >
             2024,
@@ -97,7 +97,7 @@ const Hero = () => {
               hidden: { y: "100%", opacity: 0.5 },
               visible: { y: "0%", opacity: 1 },
             }}
-            transition={{ delay: 1.5, duration: 1, ease: "easeIn" }}
+            transition={{ delay: 1.4, duration: 0.8, ease: "easeIn" }}
             className="font-semibold text-right block text-title"
             onMouseLeave={() => {
               setCursor({ size: 16, type: "none" });
@@ -121,7 +121,7 @@ const Hero = () => {
               hidden: { y: "100%", opacity: 0.5 },
               visible: { y: "0%", opacity: 1 },
             }}
-            transition={{ delay: 1.8, duration: 1, ease: "easeIn" }}
+            transition={{ delay: 1.6, duration: 0.8, ease: "easeIn" }}
             className="font-light text-right flex text-title"
             onMouseLeave={() => {
               setCursor({ size: 16, type: "none" });
@@ -152,7 +152,7 @@ const Hero = () => {
             hidden: { y: "100%", opacity: 0.5 },
             visible: { y: "0%", opacity: 1 },
           }}
-          transition={{ delay: 2, duration: 1, ease: "easeIn" }}
+          transition={{ delay: 1.8, duration: 0.6, ease: "easeIn" }}
           className="uppercase text-right font-light text-common-gray tracking-[.01rem]"
         >
           Dubai, United Arab Emirates.

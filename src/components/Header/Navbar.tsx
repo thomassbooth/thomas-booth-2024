@@ -52,7 +52,7 @@ const Navbar = () => {
               setCursor({ size: 16, type: "none" });
             }}
             onMouseEnter={() => {
-              setCursor({ size: 100, type: "scale", colour: 'bg-palette-green-light',  content: <Hire /> });
+              setCursor({ size: 70, type: "scale", colour: 'bg-palette-green-light',  content: <Hire /> });
             }}
             className = 'pointer-events-auto'
           >

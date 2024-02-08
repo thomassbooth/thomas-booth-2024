@@ -28,6 +28,9 @@ const config: Config = {
         'text': ['2.8rem', {
           'lineHeight': '1'
         }],
+        'cursor': ['1.5rem', {
+          'lineHeight': '1'
+        }],
       },
       colors: {
         common: {

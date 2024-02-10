@@ -25,14 +25,14 @@ const config: Config = {
         'heading': ['2.2rem', {
           'lineHeight': '1'
         }],
-        'text': ['2.8rem', {
+        'text': ['2.8cqw', {
           'lineHeight': '1'
         }],
-        'cursor': ['1.5rem', {
+        'cursor': ['1.2rem', {
           'lineHeight': '1'
         }],
       },
-      colors: {
+      colors: { 
         common: {
           gray: '#333',
           background: {

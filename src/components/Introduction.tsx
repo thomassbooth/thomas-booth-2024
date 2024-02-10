@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import Word from "./TextOpacity/Word";
 import { useScroll, motion, useTransform } from "framer-motion";
+import Magnetic from "./Magnetic";
 
 const paragraph = `Empowering all-scale startups with custom web experiences that are memorable and drive success. With a passion for design and development, I take projects from ideation to launch, ensuring a seamless journey that leaves a lasting impact in the digital landscape.`;
 
@@ -58,6 +59,7 @@ const Introduction = () => {
             </span>
           </motion.div>
         </div>
+        
       </div>
     </>
   );

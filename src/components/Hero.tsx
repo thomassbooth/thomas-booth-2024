@@ -15,7 +15,7 @@ const Hero = () => {
   ]);
 
   const [hidden, setHidden] = useState(false)
-  const { scrollY, scrollYProgress } = useScroll({
+  const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end start"],
   });

@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function Magnetic({ children }: { children: React.ReactNode }) {
+export default function Magnetic({ className ,children }: { className?: string, children: React.ReactNode }) {
   const ref = useRef<any>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   
@@ -12,7 +12,7 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
     const { height, width, left, top } = ref.current.getBoundingClientRect();
     const middleX = clientX - (left + width / 2);
     const middleY = clientY - (top + height / 2);
-    setPosition({ x: middleX * 0.1, y: middleY * 0.1 });
+    setPosition({ x: middleX * 0.2, y: middleY * 0.2 });
   };
 
   const reset = () => {
@@ -24,6 +24,7 @@ export default function Magnetic({ children }: { children: React.ReactNode }) {
     <motion.div
       style={{ position: "relative" }}
       ref={ref}
+      className = {className}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={{ x, y }}

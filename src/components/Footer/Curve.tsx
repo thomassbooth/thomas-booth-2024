@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, useTransform } from 'framer-motion'
 
-const Curve = ({scrollYProgress, height, width }) => {
+const Curve = ({scrollYProgress, height, width }: any) => {
   const initialPath = `
         M0 300 
         Q${width / 2} 0 ${width} 300
@@ -23,7 +23,7 @@ const Curve = ({scrollYProgress, height, width }) => {
 
   return (
     <motion.svg className = 'z-50 w-full bg-green-400'>
-      <motion.path style = {{ d: curve}} />
+      <motion.path />
     </motion.svg>
   );
 };

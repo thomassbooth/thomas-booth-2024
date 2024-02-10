@@ -36,7 +36,7 @@ const Hero = () => {
   return (
     <div
       ref={container}
-      className="h-screen w-screen px-[7%] flex flex-col items-center justify-center top-0"
+      className="h-screen relative w-screen px-[7%] flex flex-col items-center justify-center top-0"
     >
       {/* FOLIO 2024 line */}
       <HalfMoon

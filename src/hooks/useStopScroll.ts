@@ -2,18 +2,22 @@ import { useEffect, useState } from "react";
 
 const useStopScroll = () => {
   const overWriteScroll = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // Use scrollTo instead of scroll
   };
 
   useEffect(() => {
-    console.log('run')
-    addEventListener("scroll", overWriteScroll);
-
-    return () => {
-      console.log("removed")
-      removeEventListener("scroll", overWriteScroll, false);
+    const handleScroll = () => {
+      overWriteScroll();
     };
-  }, []);
+
+    // Attach event listener to the window
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Run only once on mount
 };
 
 export default useStopScroll;

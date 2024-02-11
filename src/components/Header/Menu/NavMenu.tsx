@@ -26,7 +26,7 @@ const NavMenu: React.FC<menuProps> = ({ setIsOpen, isOpen }) => {
               initial="initial"
               animate="open"
               exit="closed"
-              className="z-10 fixed top-0 left-0 h-screen w-1/2 bg-common-background-cream"
+              className="z-20 fixed top-0 left-0 h-screen w-1/2 bg-common-background-cream"
             >
               <ul className = 'h-full w-full'>
                 {links.map((link, indx) => (
@@ -39,7 +39,7 @@ const NavMenu: React.FC<menuProps> = ({ setIsOpen, isOpen }) => {
               initial="initial"
               animate="open"
               exit="closed"
-              className="z-10 fixed bottom-0 right-0 h-screen w-1/2 bg-common-gray"
+              className="z-20 fixed bottom-0 right-0 h-screen w-1/2 bg-common-gray"
             ></motion.div>
           </>
         )}

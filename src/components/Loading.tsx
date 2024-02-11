@@ -15,7 +15,7 @@ const Loading: React.FC<loadingProps> = ({ loaded, setLoaded }) => {
     setTimeout(() => setLoaded(true), 1000);
   }, []);
 
-  useStopScroll()
+  // useStopScroll()
   return (
     <>
       <div className="fixed w-screen h-screen flex justify-center items-center z-50 top-0">

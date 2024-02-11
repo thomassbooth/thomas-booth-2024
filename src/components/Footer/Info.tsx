@@ -39,10 +39,10 @@ const Info = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["50vh", "0vh"]);
 
   return (
-    <div ref={container} className="w-screen z-40 mt-[-100vh]">
+    <div ref={container} className="w-screen mt-[-100vh]">
       <div className="h-screen"></div>
       <div className="sticky -bottom-0 h-[70vh] bg-common-background-cream text-common-gray">
-        <motion.div style={{ y }}>
+        <motion.div style={{ y }} className = 'w-full px-[7%]'>
           <span className="text-title">Lets work</span>
           <span className="text-title">Together</span>
           {/* <Curve scrollYProgress = {scrollYProgress} {...dimensions}/> */}

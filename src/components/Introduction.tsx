@@ -1,8 +1,9 @@
 "use client";
 import React, { useRef } from "react";
 import Word from "./TextOpacity/Word";
-import { useScroll, motion, useTransform } from "framer-motion";
+import { useScroll, motion, useTransform, useVelocity } from "framer-motion";
 import Magnetic from "./Magnetic";
+import Marquee from "react-fast-marquee";
 
 const paragraph = `Empowering all-scale startups with custom web experiences that are memorable and drive success. With a passion for design and development, I take projects from ideation to launch, ensuring a seamless journey that leaves a lasting impact in the digital landscape.`;
 
@@ -16,6 +17,9 @@ const Introduction = () => {
   const words = paragraph.split(" ");
 
   const yintro = useTransform(scrollYProgress, [0, 1], ["0vh", "10vh"]);
+
+  const speed = useVelocity(scrollYProgress)
+
   return (
     <>
       <div className="relative py-[10%] px-[7%] bg-common-background-gray flex justify-between">
@@ -59,7 +63,6 @@ const Introduction = () => {
             </span>
           </motion.div>
         </div>
-        
       </div>
     </>
   );

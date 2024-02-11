@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useStopScroll = () => {
   const overWriteScroll = () => {
-    window.scrollTo(0, 0); // Use scrollTo instead of scroll
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {

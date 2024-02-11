@@ -15,7 +15,7 @@ const MenuButton = forwardRef<HTMLDivElement, MenuProps>(function Menu(props, re
 
   return (
     <>
-      <div className="pointer-events-none mix-blend-difference fixed p-[10px] z-20">
+      <div className="pointer-events-none mix-blend-difference fixed p-[10px] z-30">
         <Magnetic>
           <button
             onClick={() => {

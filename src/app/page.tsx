@@ -4,7 +4,8 @@ import Introduction from "@/components/Introduction";
 import type { Metadata } from "next";
 import Magnetic from "@/components/Magnetic";
 import Info from "@/components/Footer/Info";
-
+import Card from "@/components/Card";
+import Marquee from "@/components/Marquee";
 export const metadata: Metadata = {
   title: "Thomas Booth - Software Engineer 2024",
   description: "...",
@@ -15,14 +16,19 @@ export default function Home() {
     <main className="relative">
       <Hero />
       <Introduction />
-      <div className="relative  bg-red-400 z-50 flex flex-col justify-center items-center gap-20 py-10">
-        <div className = 'w-48 h-48 bg-red-200'></div>
-        <div className = 'w-48 h-48 bg-red-200'></div>
-        <div className = 'w-48 h-48 bg-red-200'></div>
-        <div className = 'w-48 h-48 bg-red-200'></div>
-        <div className = 'w-48 h-48 bg-red-200'></div>
-        <div className = 'w-48 h-48 bg-red-200'></div>
-        <div className = 'w-48 h-48 bg-red-200'></div>
+      <Marquee>
+        Thomas Booth Was here Guys
+      </Marquee>
+      <div className="relative  bg-red-400 z-10 flex flex-col justify-center items-center gap-20 py-10">
+        
+        <Card colour="red"/>
+        <Card colour="red"/>
+        <Card colour="red"/>
+        <Card colour="red"/>
+        <Card colour="red"/>
+        <Card colour="red"/>
+        <Card colour="red"/>
+
       </div>
       <Info/>
 

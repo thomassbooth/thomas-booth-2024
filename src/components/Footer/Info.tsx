@@ -74,7 +74,7 @@ const Info = () => {
                       hidden: { opacity: 0 },
                       visible: { opacity: 1 },
                     }}
-                    transition={{ delay: 2.5, duration: 0.5, ease: "easeIn" }}
+                    transition={{ delay: 1, duration: 0.5, ease: "easeIn" }}
                     className="uppercase text-sm flex items-center text-right font-light text-common-gray tracking-[.01rem] "
                   >
                     back to top
@@ -94,7 +94,7 @@ const Info = () => {
                   return (
                     <Magnetic key={indx}>
                       <Button className="px-8 py-2">
-                        <a href={link.link} className="text-text">
+                        <a href={link.link} className="text-text font-light">
                           {link.text}
                         </a>
                       </Button>

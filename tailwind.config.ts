@@ -19,13 +19,16 @@ const config: Config = {
           'lineHeight': '1'
         }],
         'subtitle': ['5.5cqw', {
-          'letterSpacing': '-.3rem',
+          'letterSpacing': '-.1rem',
           'lineHeight': '1'
         }],
         'heading': ['2.2rem', {
           'lineHeight': '1'
         }],
         'text': ['2.8cqw', {
+          'lineHeight': '1'
+        }],
+        'text-sm': ['1.4cqw', {
           'lineHeight': '1'
         }],
         'cursor': ['1.2rem', {

@@ -16,9 +16,8 @@ export default function Home() {
     <main className="relative">
       <Hero />
       <Introduction />
-      <Marquee>
-        Thomas Booth Was here Guys
-      </Marquee>
+      
+      
       <div className="relative  bg-red-400 z-10 flex flex-col justify-center items-center gap-20 py-10">
         
         <Card colour="red"/>

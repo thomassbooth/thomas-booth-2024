@@ -38,7 +38,7 @@ const Marquee = ({ children }: { children: React.ReactNode }) => {
   }, [textRef]);
 
   useAnimationFrame((t, delta) => {
-    let moveBy = velocityFactor.get() * (delta/5);
+    let moveBy = -velocityFactor.get() * (delta/5);
 
     if (Math.abs(baseX.get()) >= textSize) {
       baseX.set(0);
@@ -46,7 +46,7 @@ const Marquee = ({ children }: { children: React.ReactNode }) => {
     }
 
     baseX.set(baseX.get() + moveBy);
-  });
+  }); 
 
   //   const marqueeVariants = {
   //     animate: {
@@ -66,17 +66,19 @@ const Marquee = ({ children }: { children: React.ReactNode }) => {
     <div className="w-full relative flex pointer-events-none">
       <motion.div
         style={{ x: baseX }}
-        className=" relative items-center font-semibold text-title uppercase "
+        className=" relative flex items-center text-center"
         // variants={marqueeVariants}
         animate="animate"
       >
         <h1 ref={textRef} className="whitespace-nowrap relative">
           {children}
+          <span className = 'p-5'></span>
         </h1>
+        
       </motion.div>
       <motion.div
-        style={{ left: `-${textSize}px`, x: baseX }}
-        className=" absolute items-center font-semibold text-title uppercase"
+        style={{ left: `${textSize}px`, x: baseX }}
+        className=" absolute items-center"
         // variants={marqueeVariants}
         animate="animate"
       >

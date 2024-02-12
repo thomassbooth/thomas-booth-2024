@@ -21,13 +21,6 @@ export default function Home() {
       <div className="relative  bg-red-400 z-10 flex flex-col justify-center items-center gap-20 py-10">
         
         <Card colour="red"/>
-        <Card colour="red"/>
-        <Card colour="red"/>
-        <Card colour="red"/>
-        <Card colour="red"/>
-        <Card colour="red"/>
-        <Card colour="red"/>
-
       </div>
       <Info/>
 

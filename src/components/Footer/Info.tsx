@@ -46,45 +46,71 @@ const Info = () => {
     offset: ["start start", "end end"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["30vh", "0vh"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["50vh", "0vh"]);
 
   return (
     <div ref={container} className="w-screen mt-[-100vh]">
       <div className="h-screen"></div>
-      <div className="sticky -bottom-0 h-[90vh] bg-common-background-cream text-common-gray">
+      <div className="sticky -bottom-0 h-[80vh] bg-common-background-cream text-common-gray">
         <motion.div
           style={{ y }}
           className="w-full h-full relative flex justify-between"
         >
-          <div className="px-[7%] items-start h-full w-full flex flex-col justify-center">
-            <div className="w-full"></div>
-            <div className="flex flex-col pointer-events-none">
-              <span className="text-subtitle font-semibold">
-                <span className="font-light">Lets</span> work
-              </span>
-              <span className="text-title font-semibold line">together.</span>
+          <div className="items-start h-full w-full flex flex-col justify-between">
+            <div className="w-full pt-[1vh] px-[7%] flex justify-center">
+              <div>
+                <button
+                  className="text-right font-semibold text-text-sm"
+                  onClick={() =>
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  }
+                >
+                  <motion.h2
+                    id="scrollText"
+                    whileInView="visible"
+                    initial="hidden"
+                    viewport={{ once: true }}
+                    variants={{
+                      hidden: { opacity: 0 },
+                      visible: { opacity: 1 },
+                    }}
+                    transition={{ delay: 2.5, duration: 0.5, ease: "easeIn" }}
+                    className="uppercase text-sm flex items-center text-right font-light text-common-gray tracking-[.01rem] "
+                  >
+                    back to top
+                  </motion.h2>
+                </button>
+              </div>
             </div>
-            <div className="flex gap-4 items-end mt-10">
-              {links.map((link, indx) => {
-                return (
-                  <Magnetic key={indx}>
-                    <Button className="px-8 py-2">
-                      <a href={link.link} className="text-text">
-                        {link.text}
-                      </a>
-                    </Button>
-                  </Magnetic>
-                );
-              })}
-            </div>
-            <span className="w-screen left-0 absolute bottom-0 text-title tracking-tight font-semibold overflow-hidden">
+            <section className="px-[7%]">
+              <div className="flex flex-col pointer-events-none">
+                <span className="text-subtitle font-semibold">
+                  <span className="font-light">Lets</span> work
+                </span>
+                <span className="text-title font-semibold line">together.</span>
+              </div>
+              <div className="flex gap-4 items-end mt-10">
+                {links.map((link, indx) => {
+                  return (
+                    <Magnetic key={indx}>
+                      <Button className="px-8 py-2">
+                        <a href={link.link} className="text-text">
+                          {link.text}
+                        </a>
+                      </Button>
+                    </Magnetic>
+                  );
+                })}
+              </div>
+            </section>
+            <motion.span className="w-screen text-title tracking-tight font-semibold overflow-hidden">
               <Marquee>
                 <span className="inline-flex">
                   thomasbooth26@gmail.com
                   <FaRegPaperPlane className="block mx-5" />
                 </span>
               </Marquee>
-            </span>
+            </motion.span>
           </div>
         </motion.div>
       </div>

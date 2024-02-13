@@ -50,8 +50,8 @@ const Info = () => {
 
   return (
     <div ref={container} className="w-screen mt-[-100vh]">
-      <div className="h-screen"></div>
-      <div className="sticky -bottom-0 h-[80vh] bg-common-background-cream text-common-gray">
+      <div className="h-screen z-0"></div>
+      <div className="sticky bottom-0 h-[80vh] bg-common-background-cream text-common-gray">
         <motion.div
           style={{ y }}
           className="w-full h-full relative flex justify-between"
@@ -103,14 +103,17 @@ const Info = () => {
                 })}
               </div>
             </section>
-            <motion.span className="w-screen text-title tracking-tight font-semibold overflow-hidden">
+            <motion.a
+              href="mailito:thomasbooth26@gmail.com"
+              className="w-screen text-title tracking-tight font-semibold overflow-hidden mb-5"
+            >
               <Marquee>
-                <span className="inline-flex">
+                <span className="hover:underline inline-flex">
                   thomasbooth26@gmail.com
                   <FaRegPaperPlane className="block mx-5" />
                 </span>
               </Marquee>
-            </motion.span>
+            </motion.a>
           </div>
         </motion.div>
       </div>

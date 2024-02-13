@@ -18,7 +18,7 @@ const Loading: React.FC<loadingProps> = ({ loaded, setLoaded }) => {
   // useStopScroll()
   return (
     <>
-      <div className="fixed w-screen h-screen flex justify-center items-center z-50 top-0">
+      <div className="fixed w-screen h-screen flex justify-center items-center z-50 top-0 pointer-events-none">
         <span className="leading-none inline-flex overflow-hidden uppercase text-common-background-cream">
           <motion.div
             initial={{ y: -100 }}

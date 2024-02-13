@@ -63,7 +63,7 @@ const Marquee = ({ children }: { children: React.ReactNode }) => {
   //   };
 
   return (
-    <div className="w-full relative flex pointer-events-none">
+    <div className="w-full relative flex">
       <motion.div
         style={{ x: baseX }}
         className=" relative flex items-center text-center"

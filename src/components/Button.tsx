@@ -21,18 +21,21 @@ const Button = ({
     <div>
       <button
         onMouseEnter={() => {
-          setCursor({type: 'scale', size: 0, colour: 'bg-palette-green-light'})
+          setCursor({
+            type: "scale",
+            size: 0,
+            colour: "bg-palette-green-light",
+          });
           setHovered("hovered");
         }}
         onMouseLeave={() => {
-          setCursor({type: 'none', size: 15})
-          setHovered("normal")}}
+          setCursor({ type: "none", size: 15 });
+          setHovered("normal");
+        }}
         ref={buttonRef}
-        className={`${className} relative border border-common-gray rounded-full overflow-hidden`}
+        className={`${className} group relative border border-common-gray rounded-full overflow-hidden`}
       >
-        <span className="relative z-20 text-common-gray">
-          {children}
-        </span>
+        <span className="relative z-20 text-common-gray group-hover:text-common-background-cream transition-all">{children}</span>
         <motion.div
           initial={{ y: "100%" }}
           animate={hovered}
@@ -44,7 +47,7 @@ const Button = ({
           onAnimationComplete={() => {
             if (hovered === "normal") setHovered("reset");
           }}
-          transition={{ duration: 0.5, easing: "easeIn" }}
+          transition={{ duration: 0.4, easing: "easeIn" }}
           className="absolute top-0 left-[-25%] rounded-[50%] h-[200%] w-[150%]  bg-palette-green-light pointer-events-none"
         />
       </button>

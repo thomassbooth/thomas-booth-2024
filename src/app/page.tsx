@@ -6,6 +6,7 @@ import Magnetic from "@/components/Magnetic";
 import Info from "@/components/Footer/Info";
 import Card from "@/components/Card";
 import Marquee from "@/components/Marquee";
+import About from "@/components/About";
 export const metadata: Metadata = {
   title: "Thomas Booth - Software Engineer 2024",
   description: "...",
@@ -16,13 +17,11 @@ export default function Home() {
     <main className="relative">
       <Hero />
       <Introduction />
-      
-      
+      <About />
       <div className="relative  bg-red-400 z-10 flex flex-col justify-center items-center gap-20 py-10">
-        
         <Card colour="red"/>
       </div>
-      <Info/>
+      <Info />
 
       {/* <Random /> */}
     </main>

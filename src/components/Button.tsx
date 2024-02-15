@@ -6,9 +6,11 @@ import useHover from "@/store/useCursor";
 
 const Button = ({
   className,
+  onClick,
   children,
 }: {
   className?: string;
+  onClick: () => void; 
   children: React.ReactNode;
 }) => {
   const [hovered, setHovered] = useState("reset");
@@ -33,6 +35,7 @@ const Button = ({
           setHovered("normal");
         }}
         ref={buttonRef}
+        onClick = {() => onClick()}
         className={`${className} group relative border border-common-gray rounded-full overflow-hidden`}
       >
         <span className="relative z-20 text-common-gray group-hover:text-common-background-cream transition-all">{children}</span>

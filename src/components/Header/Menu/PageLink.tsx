@@ -4,6 +4,7 @@ import React, { SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
 import { pageLink, linkBorder } from "../anim";
 import Magnetic from "../../Magnetic";
+import useHover from "@/store/useCursor";
 
 interface linkProps {
   custom: number;
@@ -23,7 +24,10 @@ const PageLink: React.FC<linkProps> = ({
   position,
 }) => {
   const [hovered, setHovered] = useState("reset");
-
+  const [cursor, setCursor] = useHover((state) => [
+    state.cursor,
+    state.setCursor,
+  ]);
   return (
     // <div style = {{top: position}} className = 'group absolute h-1/4 left-0 w-full overflow-y-hidden'>
     <Link
@@ -38,9 +42,15 @@ const PageLink: React.FC<linkProps> = ({
           setIsOpen(false);
         }}
         onMouseEnter={() => {
+          setCursor({
+            type: "scale",
+            size: 0,
+            colour: "bg-palette-green-light",
+          });
           setHovered("hovered");
         }}
         onMouseLeave={() => {
+          setCursor({ type: "none", size: 15 });
           setHovered("normal");
         }}
       >

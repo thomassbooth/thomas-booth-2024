@@ -8,39 +8,22 @@ import Marquee from "../Marquee";
 import Button from "../Button";
 import Magnetic from "../Magnetic";
 
-const links = [
-  { text: "linkedin", link: "https://linkedin.com" },
-  { text: "github", link: "https://github.com" },
-  { text: "instagram", link: "https://instagram.com" },
-  { text: "twitter ", link: "https://twitter.com" },
-];
+
 
 const Info = () => {
+  const links = [
+    { text: "linkedin", link: "https://linkedin.com"},
+    { text: "github", link: "https://github.com"},
+    { text: "instagram", link: "https://instagram.com"},
+    { text: "twitter ", link: "https://twitter.com"}
+  ];
   const container = useRef(null);
-  const [dimensions, setDimensions] = useState<{
-    width: number | null;
-    height: number | null;
-  }>({
-    width: null,
-    height: null,
-  });
+  
 
-  useEffect(() => {
-    function resize() {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
+  const socialOnClick = (url: string) => {
+    window.open(url)
+  }
 
-    resize();
-
-    window.addEventListener("resize", resize);
-
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
@@ -93,8 +76,8 @@ const Info = () => {
                 {links.map((link, indx) => {
                   return (
                     <Magnetic key={indx}>
-                      <Button className="px-8 py-2">
-                        <a href={link.link} className="text-text font-light">
+                      <Button className="px-8 py-2" onClick = {() => socialOnClick(link.link)}>
+                        <a className="text-text font-light">
                           {link.text}
                         </a>
                       </Button>
@@ -105,12 +88,12 @@ const Info = () => {
             </section>
             <motion.a
               href="mailito:thomasbooth26@gmail.com"
-              className="w-screen text-title tracking-tight font-semibold overflow-hidden mb-5"
+              className="w-screen text-title tracking-tight font-semibold overflow-hidden"
             >
               <Marquee>
                 <span className="hover:underline inline-flex">
                   thomasbooth26@gmail.com
-                  <FaRegPaperPlane className="block mx-5" />
+                  <FaRegPaperPlane className="block" />
                 </span>
               </Marquee>
             </motion.a>

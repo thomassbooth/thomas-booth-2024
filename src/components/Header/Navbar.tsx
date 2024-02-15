@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import useHover from "@/store/useCursor";
 import Hire from "../Hover/Hire";
 import Magnetic from "../Magnetic";
+import FallingText from "../FallingText";
 
 const Navbar = () => {
   const stickyElement = useRef(null);
@@ -21,7 +22,7 @@ const Navbar = () => {
       <div className="relative w-full flex justify-end">
         <MenuButton ref={stickyElement} isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <div className="absolute top-0 w-full h-[54px] flex items-center overflow-hidden">
+      <div className="top-0 w-full h-[54px] flex items-center overflow-hidden">
         <div className="inline-block overflow-hidden left-0">
           <motion.div
             whileInView="visible"
@@ -32,11 +33,9 @@ const Navbar = () => {
               visible: { y: "0%" },
             }}
             transition={{ delay: 1.5, duration: 0.5, ease: "easeIn" }}
-            className="flex items-center pl-5 gap-2"
+            className="flex items-center pl-5 gap-2 pointer-events-auto"
           >
-            <div className="w-0.5 h-0.5 z-30 bg-black rounded-full" />
-            <span className="text-lg">T</span>
-            <span className="text-lg">B</span>
+            <FallingText text = {'©CODE BY THOMAS'}/>
           </motion.div>
         </div>
         <div className="absolute inline-block overflow-hidden left-[50%] -translate-x-1/2">
@@ -62,7 +61,7 @@ const Navbar = () => {
             }}
             className="pointer-events-auto"
           >
-            <span className="flex items-center">
+            <span className="flex items-center pointer-events-none">
               <div className="mr-2 w-2 h-2 bg-green-400 border border-common-gray rounded-full" />
               2024 - Available For Work
             </span>
@@ -79,7 +78,7 @@ const Navbar = () => {
             }}
             transition={{ delay: 2, duration: 0.5, ease: "easeIn" }}
           >
-            <span className="flex items-center">Menu</span>
+            <FallingText text = 'Menu'/>
           </motion.div>
           <div className="w-[69px]" />
         </div>

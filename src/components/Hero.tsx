@@ -135,7 +135,6 @@ const Hero = () => {
             }}
           >
             Booth
-            <div className="w-3 h-3 mt-9 ml-2 rounded-full bg-common-gray" />
           </motion.span>
         </motion.div>
       </h1>

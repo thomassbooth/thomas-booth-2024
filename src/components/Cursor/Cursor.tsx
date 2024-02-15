@@ -88,6 +88,7 @@ const Cursor = ({
     }
 
     if (cursor.type === "none") {
+      console.log(clientY)
       const absDistance = Math.max(Math.abs(distance.x), Math.abs(distance.y));
       const newScaleX = transform(absDistance, [0, (width * 3) / 2], [1, 1.3]);
       const newScaleY = transform(absDistance, [0, (width * 3) / 2], [1, 0.7]);

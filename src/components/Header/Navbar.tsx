@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="relative w-full flex justify-end">
         <MenuButton ref={stickyElement} isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
-      <div className="top-0 w-full h-[54px] flex items-center overflow-hidden">
+      <div className="absolute top-0 w-full h-[54px] flex items-center overflow-hidden z-10">
         <div className="inline-block overflow-hidden left-0">
           <motion.div
             whileInView="visible"

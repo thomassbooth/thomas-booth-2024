@@ -23,7 +23,6 @@ export default function FallingText({ text }: { text: string }) {
   const wrapper = useRef(null);
   const [y, setY] = useState('init');
 
-  console.log('this is y: ', y)
   const letters = text.split('').map((letter, i) => (
     <motion.span
       className="relative inline-block "

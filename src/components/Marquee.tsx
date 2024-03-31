@@ -4,7 +4,6 @@ import {
   motion,
   useAnimationFrame,
   useMotionValue,
-  useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
@@ -48,20 +47,6 @@ const Marquee = ({ children }: { children: React.ReactNode }) => {
     baseX.set(baseX.get() + moveBy);
   }); 
 
-  //   const marqueeVariants = {
-  //     animate: {
-  //       x: ["0%", "100%"],
-  //       transition: {
-  //         x: {
-  //           repeat: Infinity,
-  //           repeatType: "loop",
-  //           duration: 5,
-  //           ease: "linear",
-  //         },
-  //       },
-  //     },
-  //   };
-
   return (
     <div className="w-full relative flex">
       <motion.div
@@ -72,7 +57,6 @@ const Marquee = ({ children }: { children: React.ReactNode }) => {
       >
         <h1 ref={textRef} className="whitespace-nowrap relative">
           {children}
-          <span className = 'p-5'></span>
         </h1>
         
       </motion.div>

@@ -85,18 +85,22 @@ const Cursor = ({
     if (cursor.type === "scale") {
       mouse.x.set(clientX - cursorSize / 2);
       mouse.y.set(clientY - cursorSize / 2);
+      return;
     }
 
     if (cursor.type === "none") {
-      console.log(clientY)
       const absDistance = Math.max(Math.abs(distance.x), Math.abs(distance.y));
       const newScaleX = transform(absDistance, [0, (width * 3) / 2], [1, 1.3]);
       const newScaleY = transform(absDistance, [0, (width * 3) / 2], [1, 0.7]);
+      mouse.y.set(clientY - cursorSize / 2);
+      mouse.x.set(clientX - cursorSize / 2);
       rotate(distance);
       scale.x.set(newScaleX);
       scale.y.set(newScaleY);
-      mouse.x.set(clientX - cursorSize / 2);
-      mouse.y.set(clientY - cursorSize / 2);
+
+      console.log(smoothMouse.y.get())
+      console.log(smoothMouse.x.get())
+      return;
     }
   };
 
@@ -109,7 +113,7 @@ const Cursor = ({
     animate(
       cursorRef.current,
       { scaleX: 1, scaleY: 1 },
-      { duration: 0, type: "spring" }
+      { duration: 0 }
     );
   };
 
@@ -135,12 +139,15 @@ const Cursor = ({
   }, [cursor]);
 
   useEffect(() => {
-    stickyElement.current.addEventListener("mouseenter", manageMouseOver);
-    stickyElement.current.addEventListener("mouseleave", manageMouseLeave);
+
+    const element = stickyElement.current;
+
+    element.addEventListener("mouseenter", manageMouseOver);
+    element.addEventListener("mouseleave", manageMouseLeave);
 
     return () => {
-      stickyElement.current.removeEventListener("mouseenter", manageMouseOver);
-      stickyElement.current.removeEventListener("mouseleave", manageMouseLeave);
+      element.removeEventListener("mouseenter", manageMouseOver);
+      element.removeEventListener("mouseleave", manageMouseLeave);
     };
   }, [cursor]);
 
@@ -150,11 +157,10 @@ const Cursor = ({
       transformTemplate={({ rotate, scaleX, scaleY }) =>
         `rotate(${rotate}) scaleX(${scaleX}) scaleY(${scaleY})`
       }
-      className={`${cursor.className} ${
-        cursor.colour
+      className={`${cursor.className} ${cursor.colour
           ? cursor.colour
           : "bg-common-background-cream mix-blend-difference"
-      } flex justify-center items-center w-4 h-4 fixed rounded-full z-20 pointer-events-none overflow-hidden transition-colors duration-500`}
+        } flex justify-center items-center w-4 h-4 fixed rounded-full z-20 pointer-events-none overflow-hidden transition-colors duration-500`}
       animate={{
         width: cursorSize,
         height: cursorSize,
@@ -167,6 +173,7 @@ const Cursor = ({
       }}
     >
       {/* Animate the exit of cursor content otherwise itll just drop out, this way its scaled down and opacity 0 */}
+
       <AnimatePresence>
         {cursor.content && (
           <motion.div

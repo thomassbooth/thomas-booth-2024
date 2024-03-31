@@ -7,22 +7,22 @@ import { FaRegPaperPlane } from "react-icons/fa";
 import Marquee from "../Marquee";
 import Button from "../Button";
 import Magnetic from "../Magnetic";
-
-
+import useHover from "@/store/useCursor";
+import Email from "../Hover/Email";
 
 const Info = () => {
+  const setCursor = useHover((state) =>  state.setCursor);
   const links = [
-    { text: "linkedin", link: "https://linkedin.com"},
-    { text: "github", link: "https://github.com"},
-    { text: "instagram", link: "https://instagram.com"},
-    { text: "twitter ", link: "https://twitter.com"}
+    { text: "linkedin", link: "https://linkedin.com" },
+    { text: "github", link: "https://github.com" },
+    { text: "instagram", link: "https://instagram.com" },
+    { text: "twitter ", link: "https://twitter.com" },
   ];
   const container = useRef(null);
-  
 
   const socialOnClick = (url: string) => {
-    window.open(url)
-  }
+    window.open(url);
+  };
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -76,10 +76,11 @@ const Info = () => {
                 {links.map((link, indx) => {
                   return (
                     <Magnetic key={indx}>
-                      <Button className="px-8 py-2" onClick = {() => socialOnClick(link.link)}>
-                        <a className="text-text font-light">
-                          {link.text}
-                        </a>
+                      <Button
+                        className="px-8 py-2"
+                        onClick={() => socialOnClick(link.link)}
+                      >
+                        <a className="text-text font-light">{link.text}</a>
                       </Button>
                     </Magnetic>
                   );
@@ -87,11 +88,22 @@ const Info = () => {
               </div>
             </section>
             <motion.a
-              href="mailito:thomasbooth26@gmail.com"
-              className="w-screen text-title tracking-tight font-semibold overflow-hidden"
+              href="mailto:thomasbooth26@gmail.com"
+              className="p-5 rotate-2 text-title tracking-tight font-semibold -translate-x-3 bg-palette-green-light"
+              onMouseLeave={() => {
+                setCursor({ size: 16, type: "none" });
+              }}
+              onMouseEnter={() => {
+                setCursor({
+                  size: 140,
+                  type: "scale",
+                  colour: "bg-palette-green-light",
+                  content: <Email />,
+                });
+              }}
             >
               <Marquee>
-                <span className="hover:underline inline-flex">
+                <span className="inline-flex">
                   thomasbooth26@gmail.com
                   <FaRegPaperPlane className="block" />
                 </span>

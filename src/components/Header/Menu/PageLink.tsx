@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { pageLink, linkBorder } from "../anim";
 import Magnetic from "../../Magnetic";
 import useHover from "@/store/useCursor";
+import { usePathname } from "next/navigation";
 
 interface linkProps {
   custom: number;
@@ -28,6 +29,10 @@ const PageLink: React.FC<linkProps> = ({
     state.cursor,
     state.setCursor,
   ]);
+
+  const pathname = usePathname();
+
+  const isActivePage = pathname == link;
   return (
     // <div style = {{top: position}} className = 'group absolute h-1/4 left-0 w-full overflow-y-hidden'>
     <Link
@@ -63,15 +68,18 @@ const PageLink: React.FC<linkProps> = ({
             variants={pageLink}
           >
             <div className="group-hover:text-common-background-cream transition-all group-hover:font-medium text-subtitle inline-flex w-full font-light text-common-gray justify-between items-center px-[7%]">
-              <div>
+              <div className="flex items-center">
                 <span className="text-text mr-10">{custom}.</span>
-                <span className="group-hover:-translate-x-5 transition-all">
+                <span className="relative group-hover:-translate-x-5 transition-all">
+                {isActivePage && <div className="rounded-full group-hover:h-1.5 group-hover:bg-common-background-cream transition-all absolute w-full px-5 bottom-0 h-1 bg-common-gray" />}
                   {title}
                 </span>
               </div>
-              <span className="text-text group-hover:translate-x-5 border rounded-full transition-all leading-[0]">
-                {">"}
-              </span>
+              {isActivePage || (
+                <span className="text-text group-hover:translate-x-5 border rounded-full transition-all leading-[0]">
+                  {">"}
+                </span>
+              )}
             </div>
           </motion.div>
         </div>

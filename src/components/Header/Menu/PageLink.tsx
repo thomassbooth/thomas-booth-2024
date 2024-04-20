@@ -38,10 +38,10 @@ const PageLink: React.FC<linkProps> = ({
     <Link
       href={link}
       style={{ top: position }}
-      className="group absolute h-1/4 left-0 w-full overflow-y-hidden"
+      className={`group absolute h-1/4 left-0 w-full overflow-hidden`}
     >
       <li
-        className="flex flex-col h-full justify-center"
+        className="flex flex-col h-full justify-center "
         onClick={() => {
           setHovered("normal");
           setIsOpen(false);
@@ -59,7 +59,7 @@ const PageLink: React.FC<linkProps> = ({
           setHovered("normal");
         }}
       >
-        <div className="inline-block overflow-hidden z-20">
+        <div className={`inline-block overflow-hidden z-20`}>
           <motion.div
             initial="initial"
             animate="open"
@@ -67,16 +67,27 @@ const PageLink: React.FC<linkProps> = ({
             custom={custom}
             variants={pageLink}
           >
-            <div className="group-hover:text-common-background-cream transition-all group-hover:font-medium text-subtitle inline-flex w-full font-light text-common-gray justify-between items-center px-[7%]">
+            <div
+              className={`group-hover:text-common-background-cream transition-all group-hover:font-medium text-subtitle inline-flex w-full font-light text-common-gray justify-between items-center px-[7%]`}
+            >
               <div className="flex items-center">
-                <span className="text-text mr-10">{custom}.</span>
-                <span className="relative group-hover:-translate-x-5 transition-all">
-                {isActivePage && <div className="rounded-full group-hover:h-1.5 group-hover:bg-common-background-cream transition-all absolute w-full px-5 bottom-0 h-1 bg-common-gray" />}
+                <span
+                  className={`${isActivePage} text-text mr-10 group-hover:text-common-background-cream transition-all group-hover:font-medium duration-150`}
+                >
+                  {custom}.
+                </span>
+                <span
+                  className={`${isActivePage} relative transition-all duration-150`}
+                >
                   {title}
                 </span>
               </div>
               {isActivePage || (
-                <span className="text-text group-hover:translate-x-5 border rounded-full transition-all leading-[0]">
+                <span
+                  className={`${
+                    isActivePage && "translate-x-5 "
+                  } text-text group-hover:translate-x-5 duration-200 rounded-full transition-all leading-[0]`}
+                >
                   {">"}
                 </span>
               )}

@@ -11,7 +11,7 @@ import useHover from "@/store/useCursor";
 import Email from "../Hover/Email";
 
 const Info = () => {
-  const setCursor = useHover((state) =>  state.setCursor);
+  const setCursor = useHover((state) => state.setCursor);
   const links = [
     { text: "linkedin", link: "https://linkedin.com" },
     { text: "github", link: "https://github.com" },
@@ -32,7 +32,7 @@ const Info = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["50vh", "0vh"]);
 
   return (
-    <div ref={container} className="w-screen mt-[-100vh]">
+    <div ref={container} className="w-screen overflow-hidden mt-[-100vh]">
       <div className="h-screen z-0"></div>
       <div className="sticky bottom-0 h-[80vh] bg-common-background-cream text-common-gray">
         <motion.div
@@ -89,18 +89,7 @@ const Info = () => {
             </section>
             <motion.a
               href="mailto:thomasbooth26@gmail.com"
-              className="p-5 rotate-2 text-title tracking-tight font-semibold -translate-x-3 bg-palette-green-light"
-              onMouseLeave={() => {
-                setCursor({ size: 16, type: "none" });
-              }}
-              onMouseEnter={() => {
-                setCursor({
-                  size: 140,
-                  type: "scale",
-                  colour: "bg-palette-green-light",
-                  content: <Email />,
-                });
-              }}
+              className="p-5 overflow-hidden w-[105%] rotate-2 text-title tracking-tight font-semibold -translate-x-3 bg-palette-green-light"
             >
               <Marquee>
                 <span className="inline-flex">

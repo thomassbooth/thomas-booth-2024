@@ -10,15 +10,15 @@ interface menuProps {
 }
 
 const links = [
-  { title: "Home", link: "/", position: '0%'},
-  { title: "About", link: "/about", position: '25%' },
-  { title: "Works", link: "/works", position: '50%' },
-  { title: "Contact", link: "/contact", position: '75%' },
+  { title: "Home", link: "/", position: "0%" },
+  { title: "About", link: "/about", position: "25%" },
+  { title: "Works", link: "/works", position: "50%" },
+  { title: "Contact", link: "/contact", position: "75%" },
 ];
 
 const NavMenu: React.FC<menuProps> = ({ setIsOpen, isOpen }) => {
   return (
-    <div className = {`${!isOpen && 'pointer-events-none'}`}>
+    <div className={`${!isOpen && "pointer-events-none"}`}>
       <AnimatePresence mode="wait">
         {isOpen && (
           <>
@@ -29,9 +29,17 @@ const NavMenu: React.FC<menuProps> = ({ setIsOpen, isOpen }) => {
               exit="closed"
               className="z-20 fixed top-0 left-0 h-screen w-1/2 bg-common-background-cream"
             >
-              <ul className = 'relative h-screen w-full'>
+              <ul className="relative h-screen w-full">
                 {links.map((link, indx) => (
-                  <PageLink custom = {indx} key={indx} title={link.title} link={link.link} isOpen = {isOpen} setIsOpen={setIsOpen} position = {link.position} />
+                  <PageLink
+                    custom={indx}
+                    key={indx}
+                    title={link.title}
+                    link={link.link}
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
+                    position={link.position}
+                  />
                 ))}
               </ul>
             </motion.div>

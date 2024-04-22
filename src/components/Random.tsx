@@ -1,7 +1,7 @@
 "use client";
 import useHover from "@/store/useCursor";
 import React from "react";
-import Card from "./Card";
+import Card from "./Card/Card";
 import Project from "./Hover/Project";
 import { useRouter } from "next/navigation";
 

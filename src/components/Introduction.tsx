@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import Word from "./TextOpacity/Word";
 import { useScroll, motion, useTransform, useVelocity } from "framer-motion";
 
-const paragraph = `Empowering all-scale startups with custom web experiences that are memorable and drive success. With a passion for design and development, I take projects from ideation to launch, ensuring a seamless journey that leaves a lasting impact in the digital landscape.`;
+const paragraph = `With a passion for pioneering tech and driving impactful projects, I specialize in architecting innovative solutions that exceed expectations. Leveraging dynamic leadership, adept management, and strong technical prowess in software engineering, I foster collaboration for exceptional results.`;
 
 const Introduction = () => {
   const container = useRef(null);
@@ -16,7 +16,7 @@ const Introduction = () => {
 
   const yintro = useTransform(scrollYProgress, [0, 1], ["0vh", "10vh"]);
 
-  const speed = useVelocity(scrollYProgress)
+  const speed = useVelocity(scrollYProgress);
 
   return (
     <>

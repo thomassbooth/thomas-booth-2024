@@ -4,9 +4,10 @@ import Introduction from "@/components/Introduction";
 import type { Metadata } from "next";
 import Magnetic from "@/components/Magnetic";
 import Info from "@/components/Footer/Info";
-import Card from "@/components/Card";
+import Card from "@/components/Card/Card";
 import Marquee from "@/components/Marquee";
 import About from "@/components/About";
+import Cards from "@/components/Card/Cards";
 export const metadata: Metadata = {
   title: "Thomas Booth - Software Engineer 2024",
   description: "...",
@@ -17,10 +18,8 @@ export default function Home() {
     <main className="relative">
       <Hero />
       <Introduction />
-      <About />
-      <div className="relative  bg-red-400 z-10 flex flex-col justify-center items-center gap-20 py-10">
-        <Card colour="red"/>
-      </div>
+      {/* <About /> */}
+      <Cards/>
       <Info />
 
       {/* <Random /> */}

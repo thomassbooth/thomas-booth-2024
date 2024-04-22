@@ -1,7 +1,7 @@
 "use client";
 
 import useCursor from "@/store/useCursor";
-import { useScroll, useTransform } from "framer-motion";
+import { MotionValue, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 

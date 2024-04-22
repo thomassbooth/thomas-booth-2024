@@ -1,29 +1,53 @@
-import React from "react";
-import { motion, useTransform } from 'framer-motion'
+"use client";
 
-const Curve = ({scrollYProgress, height, width }: any) => {
+import React, { useEffect, useState } from "react";
+import { motion, useTransform } from "framer-motion";
+
+const Curve = ({ scrollYProgress }: any) => {
+  const [dimensions, setDimensions] = useState({
+    width: null,
+    height: null
+  });
+
+  useEffect(() => {
+    function resize() {
+      setDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    }
+    resize();
+    window.addEventListener("resize", resize);
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+  const {width, height} = dimensions
   const initialPath = `
-        M0 300 
-        Q${width / 2} 0 ${width} 300
-        L${width} ${300}
-        Q${width / 2} ${600} 0 ${300}
-        L0 0
-    `;
+  M0 ${height}
+  Q${width / 2} ${height} ${width} 300
+  L${width} ${200 + 300}
+  Q${width / 2} ${200 + 600} 0 ${200 + 300}
+  L0 0
+`;
 
   const targetPath = `
-        M0 300
-        Q${width / 2} 0 ${width} 300
-        L${width} 0
-        Q${width / 2} 0 0 0
-        L0 0
-        `;
+  M0 ${height}
+  Q${width / 2} ${height} ${width} ${height}
+  L${width} 0
+  Q${width / 2} 0 0 0
+  L0 0
+`;
 
-
-    const curve = useTransform(scrollYProgress, [0, 1], [targetPath, initialPath])
+  const curve = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [initialPath, targetPath]
+  );
 
   return (
-    <motion.svg className = 'z-50 w-full bg-green-400'>
-      <motion.path />
+    <motion.svg className="w-full absolute h-screen bg-common-gray">
+      <motion.path d={curve} fill="#f8fafc"/>
     </motion.svg>
   );
 };

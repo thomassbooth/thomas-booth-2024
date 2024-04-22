@@ -4,6 +4,7 @@ import useCursor from "@/store/useCursor";
 import { MotionValue, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { project } from "@/lib/types";
 
 interface cardProps {
   i: number;
@@ -11,15 +12,6 @@ interface cardProps {
   range: number[];
   targetScale: number;
   project: project
-}
-
-interface project {
-  title: string;
-  description: string;
-  src: string;
-  link: string;
-  color: string;
-
 }
 
 const Card: React.FC<cardProps> = ({
@@ -37,7 +29,7 @@ const Card: React.FC<cardProps> = ({
 
   const scale = useTransform(progress, range, [1, targetScale]);
   return (
-    <div
+    <motion.div
       ref={container}
       className="flex items-center justify-center sticky top-0 h-screen"
     >
@@ -49,7 +41,7 @@ const Card: React.FC<cardProps> = ({
           <p className="font-bold	text-9xl text-center">{project.title}</p>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

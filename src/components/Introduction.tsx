@@ -20,7 +20,7 @@ const Introduction = () => {
 
   return (
     <>
-      <div className="relative py-[10%] px-[7%] bg-common-background-gray flex justify-between">
+      <div className="relative py-[10%] px-[7%] bg-common-gray flex justify-between">
         <motion.span
           whileInView="visible"
           initial="hidden"
@@ -31,7 +31,7 @@ const Introduction = () => {
           }}
           transition={{ delay: 0.1, duration: 1, ease: "easeIn" }}
           ref={container}
-          className="font-light text-text text-common-background-cream flex flex-wrap w-2/3 pointer-events-none"
+          className="font-light text-text text-common-cream flex flex-wrap w-2/3 pointer-events-none"
         >
           {words.map((word, indx) => {
             const start = indx / words.length;
@@ -56,7 +56,7 @@ const Introduction = () => {
             style={{ y: yintro }}
             className="inline-flex flex-col overflow-hidden"
           >
-            <span className="font-light pointer-events-none text-heading text-common-background-cream">
+            <span className="font-light pointer-events-none text-heading text-common-cream">
               Introduction
             </span>
           </motion.div>

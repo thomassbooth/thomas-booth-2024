@@ -38,10 +38,7 @@ const config: Config = {
       colors: { 
         common: {
           gray: '#333',
-          background: {
-            cream: '#f8fafc',
-            gray: '#222'
-          }
+          cream: '#f8fafc',
         },
         palette: {
           green: {

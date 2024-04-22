@@ -38,7 +38,7 @@ const Button = ({
         onClick = {() => onClick()}
         className={`${className} group relative border border-common-gray rounded-full overflow-hidden`}
       >
-        <span className="relative z-20 text-common-gray group-hover:text-common-background-cream transition-all">{children}</span>
+        <span className="relative z-20 text-common-gray group-hover:text-common-cream transition-all">{children}</span>
         <motion.div
           initial={{ y: "100%" }}
           animate={hovered}

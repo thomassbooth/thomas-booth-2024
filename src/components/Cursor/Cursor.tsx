@@ -159,7 +159,7 @@ const Cursor = ({
       }
       className={`${cursor.className} ${cursor.colour
           ? cursor.colour
-          : "bg-common-background-cream mix-blend-difference"
+          : "bg-common-cream mix-blend-difference"
         } flex justify-center items-center w-4 h-4 fixed rounded-full z-20 pointer-events-none overflow-hidden transition-colors duration-500`}
       animate={{
         width: cursorSize,

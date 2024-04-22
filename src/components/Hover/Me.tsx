@@ -8,7 +8,7 @@ import { reverse } from "dns";
 const Me = () => {
   return (
     <div
-      className="h-full w-full justify-center items-center  text-common-background-cream"
+      className="h-full w-full justify-center items-center  text-common-cream"
     >
       <motion.div
         animate={{ rotate: "10deg" } as any}
@@ -19,7 +19,7 @@ const Me = () => {
           from: "-10deg",
           ease: "easeOut",
         }}
-        className=" text-common-background-cream flex origin-bottom"
+        className=" text-common-cream flex origin-bottom"
       >
         <IoHandLeftOutline size = {35}/>
       </motion.div>

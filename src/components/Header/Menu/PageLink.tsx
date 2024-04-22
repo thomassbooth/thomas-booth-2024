@@ -68,11 +68,11 @@ const PageLink: React.FC<linkProps> = ({
             variants={pageLink}
           >
             <div
-              className={`group-hover:text-common-background-cream transition-all group-hover:font-medium text-subtitle inline-flex w-full font-light text-common-gray justify-between items-center px-[7%]`}
+              className={`group-hover:text-common-cream transition-all group-hover:font-medium text-subtitle inline-flex w-full font-light text-common-gray justify-between items-center px-[7%]`}
             >
               <div className="flex items-center">
                 <span
-                  className={`${isActivePage} text-text mr-10 group-hover:text-common-background-cream transition-all group-hover:font-medium duration-150`}
+                  className={`${isActivePage} text-text mr-10 group-hover:text-common-cream transition-all group-hover:font-medium duration-150`}
                 >
                   {custom}.
                 </span>
@@ -115,7 +115,7 @@ const PageLink: React.FC<linkProps> = ({
         exit="closed"
         custom={custom}
         variants={linkBorder}
-        className="absolute bottom-0 w-full h-0.5 bg-common-background-gray"
+        className="absolute bottom-0 w-full h-0.5 bg-common-gray"
       />
     </Link>
   );

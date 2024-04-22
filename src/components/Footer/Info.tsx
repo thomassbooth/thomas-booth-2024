@@ -9,9 +9,10 @@ import Button from "../Button";
 import Magnetic from "../Magnetic";
 import useHover from "@/store/useCursor";
 import Email from "../Hover/Email";
+import Curve from "./Curve";
 
 const Info = () => {
-  const setCursor = useHover((state) => state.setCursor);
+
   const links = [
     { text: "linkedin", link: "https://linkedin.com" },
     { text: "github", link: "https://github.com" },
@@ -34,7 +35,8 @@ const Info = () => {
   return (
     <div ref={container} className="w-screen overflow-hidden mt-[-100vh]">
       <div className="h-screen z-0"></div>
-      <div className="sticky bottom-0 h-[80vh] bg-common-background-cream text-common-gray">
+      <div className="sticky bottom-0 h-[80vh] text-common-gray bg-common-cream">
+        <Curve scrollYProgress = {scrollYProgress}/>
         <motion.div
           style={{ y }}
           className="w-full h-full relative flex justify-between"

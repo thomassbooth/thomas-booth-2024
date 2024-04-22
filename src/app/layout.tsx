@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${OverusedGrotesk.className} bg-common-background-cream`}
+        className={`${OverusedGrotesk.className} bg-common-cream`}
       >
         <LenisScroll>
           <LoadingLayout>

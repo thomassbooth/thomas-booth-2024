@@ -8,6 +8,7 @@ import Card from "@/components/Card/Card";
 import Marquee from "@/components/Marquee";
 import About from "@/components/About";
 import Cards from "@/components/Card/Cards";
+import Curve from "@/components/Footer/Curve";
 export const metadata: Metadata = {
   title: "Thomas Booth - Software Engineer 2024",
   description: "...",

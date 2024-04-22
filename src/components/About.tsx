@@ -17,7 +17,7 @@ const About = () => {
   return (
     <div
       ref={container}
-      className="bg-common-background-cream h-screen text-common-gray px-[7%]"
+      className="bg-common-cream h-screen text-common-gray px-[7%]"
     >
       <div className="w-full flex justify-between">
         <span className="text-subtitle font-semibold">Software</span>

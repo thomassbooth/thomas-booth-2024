@@ -35,9 +35,9 @@ const Card: React.FC<cardProps> = ({
     >
       <motion.div
         style={{ scale, top: `calc(-5vh + ${i * 25}px)`, backgroundColor: project.color }}
-        className="relative -top-1/4 h-[500px] w-[1000px] p-12"
+        className="relative -top-1/4 h-[500px] w-[1000px] p-12 rounded-lg"
       >
-        <div className="relative bg-gray-200">
+        <div className="relative ">
           <p className="font-bold	text-9xl text-center">{project.title}</p>
         </div>
       </motion.div>

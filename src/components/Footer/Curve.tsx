@@ -5,8 +5,8 @@ import { motion, useTransform } from "framer-motion";
 
 const Curve = ({ scrollYProgress }: any) => {
   const [dimensions, setDimensions] = useState({
-    width: null,
-    height: null
+    width: 0,
+    height: 0
   });
 
   useEffect(() => {
@@ -24,19 +24,19 @@ const Curve = ({ scrollYProgress }: any) => {
   }, []);
   const {width, height} = dimensions
   const initialPath = `
-  M0 ${height}
-  Q${width / 2} ${height} ${width} 300
-  L${width} ${200 + 300}
-  Q${width / 2} ${200 + 600} 0 ${200 + 300}
-  L0 0
+    M0 ${height}
+    Q${width / 2} ${height} ${width} 300
+    L${width} ${200 }
+    Q${width / 2} ${200 + 300} 0 ${200 }
+    L0 0
 `;
 
   const targetPath = `
-  M0 ${height}
-  Q${width / 2} ${height} ${width} ${height}
-  L${width} 0
-  Q${width / 2} 0 0 0
-  L0 0
+    M0 ${height}
+    Q${width / 2} ${height} ${width} ${height}
+    L${width} 0
+    Q${width / 2} 0 0 0
+    L0 0
 `;
 
   const curve = useTransform(

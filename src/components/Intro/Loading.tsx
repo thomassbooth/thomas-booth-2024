@@ -3,7 +3,8 @@
 import useStopScroll from "@/hooks/useStopScroll";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { SetStateAction, useCallback, useEffect, useState } from "react";
-import { transition } from "./anim";
+import { transition } from "../anim";
+import Curve from "./Curve";
 
 interface loadingProps {
   loaded: boolean;
@@ -74,6 +75,7 @@ const Loading: React.FC<loadingProps> = ({ loaded, setLoaded }) => {
         exit={{ height: 0, transition: {...transition, delay: 0.4}  }}
         className="fixed bottom-0 bg-common-gray w-1/4 left-[75%] flex justify-center items-center z-40 h-screen"
       />
+      {/* <Curve /> */}
     </>
   );
 };

@@ -4,7 +4,7 @@ import Cursor from "@/components/Cursor/Cursor";
 import MenuButton from "@/components/Header/Menu/MenuButton";
 import Menu from "@/components/Header/Menu/NavMenu";
 import Navbar from "@/components/Header/Navbar";
-import Loading from "@/components/Loading";
+import Loading from "@/components/Intro/Loading";
 import { AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
 

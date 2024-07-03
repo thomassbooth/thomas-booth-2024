@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import localFont from "next/font/local";
 import "./globals.css";
-import Loading from "@/components/Loading";
 import CursorMenu from "@/layouts/LoadingLayout";
 import LenisScroll from "@/layouts/LenisScroll";
 import LoadingLayout from "@/layouts/LoadingLayout";

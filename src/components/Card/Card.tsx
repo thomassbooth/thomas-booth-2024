@@ -28,6 +28,7 @@ const Card: React.FC<cardProps> = ({
   const container = useRef(null);
 
   const scale = useTransform(progress, range, [1, targetScale]);
+  
   return (
     <motion.div
       ref={container}

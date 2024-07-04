@@ -6,8 +6,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { FaArrowRight } from "react-icons/fa";
+import useHover from "@/store/useCursor";
 
 const About = () => {
+  const [cursor, setCursor] = useHover((state) => [
+    state.cursor,
+    state.setCursor,
+  ]);
   const [dimensions, setDimensions] = useState({
     width: 0,
     height: 0,
@@ -60,7 +65,7 @@ const About = () => {
     >
       <motion.h2
         style={{ y: titleY }}
-        className="flex flex-col text-subtitle font-semibold pb-[15%] px-[10%]"
+        className="flex flex-col text-subtitle font-semibold pb-[15%] px-[10%] pointer-events-none"
       >
         <span>Technical prowess</span>
         <span>to put you ahead</span>
@@ -70,6 +75,16 @@ const About = () => {
           <motion.div
             style={{ x: ballX }}
             className="absolute flex justify-center items-center transform  w-[11vw] h-[11vw] rounded-[50%] bg-palette-green-light"
+            onMouseEnter={() => {
+              setCursor({
+                type: "scale",
+                size: 0,
+                colour: "bg-palette-green-light",
+              });
+            }}
+            onMouseLeave={() => {
+              setCursor({ type: "none", size: 15 });
+            }}
           >
             <motion.div style={{ rotate: rotateIcon }}>
               <AiOutlineGlobal size={80} className="text-white" />

@@ -3,7 +3,6 @@ import React from "react";
 import { IoHandLeftOutline } from "react-icons/io5";
 
 import { motion } from "framer-motion";
-import { reverse } from "dns";
 import Image from "next/image";
 
 interface ProjectsProps {

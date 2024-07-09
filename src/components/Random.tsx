@@ -2,7 +2,6 @@
 import useHover from "@/store/useCursor";
 import React from "react";
 import Card from "./Card/Card";
-import Project from "./Hover/Project";
 import { useRouter } from "next/navigation";
 
 const Random = () => {
@@ -22,7 +21,7 @@ const Random = () => {
         setCursor({ size: 16, type: "none" });
       }}
       onMouseEnter={() => {
-        setCursor({ size: 100, type: "scale", colour: 'bg-green-200',  content: <Project /> });
+        setCursor({ size: 100, type: "scale", colour: 'bg-green-200',  content: <></>});
       }}
     >
       {cursor.type === "scale" ? "true" : "false"}

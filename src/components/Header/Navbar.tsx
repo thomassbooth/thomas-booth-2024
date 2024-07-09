@@ -83,7 +83,7 @@ const Navbar = () => {
           <div className="w-[69px]" />
         </div>
       </div>
-      <motion.div
+      {/* <motion.div
         whileInView="visible"
         initial="hidden"
         viewport={{ once: true }}
@@ -93,7 +93,7 @@ const Navbar = () => {
         }}
         transition={{ delay: 1.5, duration: 1, ease: "easeIn" }}
         className="absolute top-0 w-screen border-b mt-[54px] border-common-gray z-10"
-      />
+      /> */}
       <NavMenu isOpen={isOpen} setIsOpen={setIsOpen} />
       <Cursor stickyElement={stickyElement} />
     </>

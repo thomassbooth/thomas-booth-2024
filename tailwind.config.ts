@@ -42,12 +42,12 @@ const config: Config = {
         },
         palette: {
           green: {
-            light: '#BECAC4',
             dark: '#1D3630',
+            light: '#BECAC4',
             base: '#6E807A'
           },
           tan: '#E1DFDA',
-          'off-white': '#F7F4EE'
+          'off-white': '#EEEDEB'
         },
       }
     },

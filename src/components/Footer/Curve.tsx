@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useTransform } from "framer-motion";
 
-const Curve = ({ scrollYProgress }: any) => {
+const Curve = ({ scrollYProgress, colour }: any) => {
   const [dimensions, setDimensions] = useState({
     width: 0,
     height: 0
@@ -46,7 +46,7 @@ const Curve = ({ scrollYProgress }: any) => {
   );
 
   return (
-    <motion.svg className="w-full absolute h-screen bg-common-gray">
+    <motion.svg className={`w-full absolute h-screen ${colour}`}>
       <motion.path d={curve} fill="#f8fafc"/>
     </motion.svg>
   );

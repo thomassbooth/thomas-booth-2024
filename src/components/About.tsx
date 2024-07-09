@@ -42,14 +42,14 @@ const About = () => {
 
   const titleY = useTransform(scrollYProgress, [0, 1], ["0vh", "-10vh"]);
 
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0vh", "-25vh"]);
+  const imageY = useTransform(scrollYProgress, [0.2, 1], ["0vh", "-20vh"]);
   const imageWrapperY = useTransform(scrollYProgress, [0, 1], ["0vh", "10vh"]);
   const imageTextY = useTransform(scrollYProgress, [0.2, 1], ["0vh", "50vh"]);
 
   const ballX = useTransform(scrollYProgress, [0, 0.7], ["50vw", "40vw"]);
   const rotateArrow = useTransform(
     scrollYProgress,
-    [0.25, 0.7],
+    [0.25, 0.6],
     ["0deg", "90deg"]
   );
   const rotateIcon = useTransform(

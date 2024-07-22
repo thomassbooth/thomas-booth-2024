@@ -53,7 +53,7 @@ const Navbar = () => {
             }}
             onMouseEnter={() => {
               setCursor({
-                size: 70,
+                size: 80,
                 type: "scale",
                 colour: "bg-palette-green-light",
                 content: <Hire />,

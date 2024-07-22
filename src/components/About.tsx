@@ -113,6 +113,7 @@ const About = () => {
           <motion.div
             style={{ y: imageY }}
             className={`relative overflow-hidden grayscale-[0.3]`}
+            
           >
             <Image
               className="relative"
@@ -121,6 +122,16 @@ const About = () => {
               alt="test"
               width={width / 2}
               height={height / 2}
+              onMouseLeave={() => {
+                setCursor({ size: 16, type: "none" });
+              }}
+              onMouseEnter={() => {
+                setCursor({
+                  size: 300,
+                  type: "scale",
+                  className: "rounded-none",
+                });
+              }}
             />
           </motion.div>
         </motion.div>

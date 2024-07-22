@@ -13,6 +13,7 @@ interface cardProps {
   range: number[];
   targetScale: number;
   project: project;
+  setViewCursor: any
 }
 
 const Card: React.FC<cardProps> = ({
@@ -21,6 +22,7 @@ const Card: React.FC<cardProps> = ({
   range,
   targetScale,
   project,
+  setViewCursor
 }) => {
   const [cursor, setCursor] = useCursor((state) => [
     state.cursor,
@@ -41,9 +43,11 @@ const Card: React.FC<cardProps> = ({
         }}
         className="relative -top-1/4 h-[500px] w-[1000px] p-12 rounded-lg pointer-events-auto"
         onMouseLeave={() => {
+          setViewCursor(false)
           setCursor({ size: 16, type: "none" });
         }}
         onMouseEnter={() => {
+          setViewCursor(true)
           setCursor({
             size: 300,
             type: "scale",
@@ -55,6 +59,7 @@ const Card: React.FC<cardProps> = ({
       >
         <div className="relative ">
           <p className="font-bold	text-9xl text-center">{project.title}</p>
+          <p>{project.description}</p>
         </div>
       </motion.a>
     </motion.div>

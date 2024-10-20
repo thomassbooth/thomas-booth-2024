@@ -1,8 +1,9 @@
 export interface project {
+  id: number;
   title: string;
-  description: string;
-  src: string;
+  description: string[];
   link: string;
   color: string;
-  image: string
+  image: string | null
+  tech: string[];
 }

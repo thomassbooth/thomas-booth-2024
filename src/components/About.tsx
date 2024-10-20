@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { FaArrowRight } from "react-icons/fa";
 import useHover from "@/store/useCursor";
+import PersonalPic from "./Hover/PersonalPic";
 
 const About = () => {
   const [cursor, setCursor] = useHover((state) => [
@@ -127,9 +128,10 @@ const About = () => {
               }}
               onMouseEnter={() => {
                 setCursor({
-                  size: 300,
+                  size: 120,
                   type: "scale",
-                  className: "rounded-none",
+                  colour: "bg-palette-green-light",
+                  content: <PersonalPic />,
                 });
               }}
             />

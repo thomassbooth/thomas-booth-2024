@@ -77,7 +77,7 @@ const PageLink: React.FC<linkProps> = ({
                   {custom}.
                 </span>
                 <span
-                  className={`${isActivePage} relative transition-all duration-150`}
+                  className={`${isActivePage && "font-semibold"} relative transition-all duration-150`}
                 >
                   {title}
                 </span>

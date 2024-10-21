@@ -10,7 +10,7 @@ const Button = ({
   children,
 }: {
   className?: string;
-  onClick: () => void; 
+  onClick: () => void;
   children: React.ReactNode;
 }) => {
   const [hovered, setHovered] = useState("reset");
@@ -35,10 +35,12 @@ const Button = ({
           setHovered("normal");
         }}
         ref={buttonRef}
-        onClick = {() => onClick()}
+        onClick={() => onClick()}
         className={`${className} group relative border border-common-gray rounded-full overflow-hidden`}
       >
-        <span className="relative z-20 text-common-gray group-hover:text-common-cream transition-all">{children}</span>
+        <span className="relative z-20 text-common-gray group-hover:text-common-cream transition-all">
+          {children}
+        </span>
         <motion.div
           initial={{ y: "100%" }}
           animate={hovered}
@@ -51,7 +53,7 @@ const Button = ({
             if (hovered === "normal") setHovered("reset");
           }}
           transition={{ duration: 0.4, easing: "easeIn" }}
-          className="absolute top-0 left-[-25%] rounded-[50%] h-[200%] w-[150%]  bg-palette-green-light pointer-events-none"
+          className="absolute top-0 left-[-25%] rounded-[50%] h-[200%] w-[150%] bg-palette-green-light pointer-events-none"
         />
       </button>
     </div>

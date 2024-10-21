@@ -14,7 +14,6 @@ export default function Home() {
     <main className="relative">
       <Hero />
       <Introduction />
-      <About />
       <Cards/>
       <Footer />
 

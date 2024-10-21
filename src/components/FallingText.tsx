@@ -42,10 +42,10 @@ export default function FallingText({ text }: { text: string }) {
       ref={wrapper}
       className="relative leading-none inline-flex overflow-hidden"
     >
-      <span className = 'pointer-events-none'>
+      <span className = 'pointer-events-none text-common-gray'>
         {letters}
       </span>
-      <span className="absolute top-0 left-0 translate-y-[200%] pointer-events-none" >
+      <span className="absolute top-0 left-0 translate-y-[200%] pointer-events-none text-common-gray" >
         {letters}
       </span>
     </span>

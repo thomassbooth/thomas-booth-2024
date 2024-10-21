@@ -8,6 +8,7 @@ import { AiOutlineGlobal } from "react-icons/ai";
 import { FaArrowRight } from "react-icons/fa";
 import useHover from "@/store/useCursor";
 import PersonalPic from "./Hover/PersonalPic";
+import { aboutDescription } from "@/lib/data";
 
 const About = () => {
   const [cursor, setCursor] = useHover((state) => [
@@ -45,12 +46,12 @@ const About = () => {
 
   const imageY = useTransform(scrollYProgress, [0.2, 1], ["0vh", "-20vh"]);
   const imageWrapperY = useTransform(scrollYProgress, [0, 1], ["0vh", "10vh"]);
-  const imageTextY = useTransform(scrollYProgress, [0.2, 1], ["0vh", "50vh"]);
+  const imageTextY = useTransform(scrollYProgress, [0.2, 1], ["0vh", "20vh"]);
 
   const ballX = useTransform(scrollYProgress, [0, 0.7], ["50vw", "40vw"]);
   const rotateArrow = useTransform(
     scrollYProgress,
-    [0.25, 0.6],
+    [0.32, 0.6],
     ["0deg", "90deg"]
   );
   const rotateIcon = useTransform(
@@ -66,7 +67,7 @@ const About = () => {
     >
       <motion.h2
         style={{ y: titleY }}
-        className="flex flex-col text-subtitle font-semibold pb-[15%] px-[10%] pointer-events-none"
+        className="flex flex-col text-subtitle mt-40 font-semibold pb-[10%] px-[10%] pointer-events-none"
       >
         <span>Technical prowess</span>
         <span>to put you ahead</span>
@@ -100,11 +101,7 @@ const About = () => {
             <FaArrowRight size={50} />
           </motion.div>
           <motion.p style={{ y: imageTextY }} className = 'px-20 text-lg font-light'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus
-            non enim praesent elementum facilisis leo. Gravida rutrum quisque
-            non tellus. Quis vel eros donec ac odio tempor orci. Ullamcorper sit
-            amet risus nullam eget.
+            {aboutDescription}
           </motion.p>
         </div>
         <motion.div

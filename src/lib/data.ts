@@ -1,6 +1,13 @@
 import Me from "@/components/Hover/Me";
 import { project } from "./types";
 
+
+export const aboutDescription: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus\
+            non enim praesent elementum facilisis leo. Gravida rutrum quisque\
+            non tellus. Quis vel eros donec ac odio tempor orci. Ullamcorper sit\
+            amet risus nullam eget."
+            
 export const projects: project[] = [
   {
     id: 1,

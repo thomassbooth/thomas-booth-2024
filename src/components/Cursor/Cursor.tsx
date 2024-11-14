@@ -35,7 +35,7 @@ const Cursor = ({
     y: useMotionValue(0),
   };
 
-  const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 };
+  const smoothOptions = { damping: 20, stiffness: 300, mass: 0.1 };
   const smoothMouse = {
     x: useSpring(mouse.x, smoothOptions),
     y: useSpring(mouse.y, smoothOptions),
@@ -98,8 +98,8 @@ const Cursor = ({
       scale.x.set(newScaleX);
       scale.y.set(newScaleY);
 
-      console.log(smoothMouse.y.get())
-      console.log(smoothMouse.x.get())
+      console.log(smoothMouse.y.get());
+      console.log(smoothMouse.x.get());
       return;
     }
   };
@@ -110,11 +110,7 @@ const Cursor = ({
 
   const manageMouseLeave = () => {
     setCursor({ type: "none", size: 16 });
-    animate(
-      cursorRef.current,
-      { scaleX: 1, scaleY: 1 },
-      { duration: 0 }
-    );
+    animate(cursorRef.current, { scaleX: 1, scaleY: 1 }, { duration: 0 });
   };
 
   useEffect(() => {
@@ -139,7 +135,6 @@ const Cursor = ({
   }, [cursor]);
 
   useEffect(() => {
-
     const element = stickyElement.current;
 
     element.addEventListener("mouseenter", manageMouseOver);
@@ -157,10 +152,9 @@ const Cursor = ({
       transformTemplate={({ rotate, scaleX, scaleY }) =>
         `rotate(${rotate}) scaleX(${scaleX}) scaleY(${scaleY})`
       }
-      className={`${cursor.className} ${cursor.colour
-          ? cursor.colour
-          : "bg-common-cream mix-blend-difference"
-        } flex justify-center items-center w-4 h-4 fixed rounded-full z-20 pointer-events-none overflow-hidden transition-colors duration-500`}
+      className={`${cursor.className} ${
+        cursor.colour ? cursor.colour : "bg-common-cream mix-blend-difference"
+      } flex justify-center items-center w-4 h-4 fixed rounded-full z-20 pointer-events-none overflow-hidden transition-colors duration-500`}
       animate={{
         width: cursorSize,
         height: cursorSize,

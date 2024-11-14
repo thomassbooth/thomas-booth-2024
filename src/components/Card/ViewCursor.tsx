@@ -8,14 +8,14 @@ interface ViewCursorProps {
 
 const cursorSize = 100;
 
-const ViewCursor: React.FC<ViewCursorProps> = ({initial}) => {
+const ViewCursor: React.FC<ViewCursorProps> = ({ initial }) => {
   // Initialize motion values
   var mouse = {
     x: useMotionValue(initial.x),
     y: useMotionValue(initial.y),
   };
 
-  const smoothOptions = { damping: 30, stiffness: 300, mass: 0.5 };
+  const smoothOptions = { damping: 30, stiffness: 300, mass: 0.15 };
 
   // Create smooth animated mouse positions using springs
   const smoothMouse = {

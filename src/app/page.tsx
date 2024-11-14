@@ -14,7 +14,7 @@ export default function Home() {
     <main className="relative">
       <Hero />
       <Introduction />
-      <Cards/>
+      <Cards />
       <Footer />
 
       {/* <Random /> */}
